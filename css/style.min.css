@@ -1,7 +1,4 @@
-/*
- * Moon by GetTemplates.co
- * URL: https://gettemplates.co
- */
+
 html {
   font-size: 62.5%;
   overflow-x: hidden; }
@@ -117,7 +114,7 @@ button:focus {
 .btn:hover,
 a:hover {
   text-decoration: none;
-  color: #ffffff; }
+  color: white; }
 
 .btn-group-lg > .btn, .btn-lg {
   padding: 1rem; }
@@ -204,7 +201,8 @@ a:hover {
   z-index: 11;
   transition: background-color .3s ease-in-out;
   border-top-right-radius: 5px;
-  border-top-left-radius: 5px; }
+  border-top-left-radius: 5px;
+  background-color: #fff; }
 
 .navbar-brand {
   font-size: 40px;
@@ -426,7 +424,8 @@ footer {
   height: 38px;
   font-weight: 300; }
   .form-control:focus {
-    border-color: #002fff; }
+    border-color: gray;
+    box-shadow:  0px 0px 0px grey; } /*input border*/
 
 #gtco-contact-form form label.error {
   margin-bottom: 15px;
@@ -471,6 +470,9 @@ footer {
 @media (max-width: 992px) {
   #navbar-nav-header .navbar-nav {
     margin-top: 15px; }
+  #welcomeMessage{
+    font-size: 3.0rem !important;
+  }
   #gtco-header-navbar {
     padding-left: 15px;
     background-color: #fff; } }
@@ -492,3 +494,15 @@ footer {
     width: 100%; }
   .card-deck {
     flex-direction: column; } }
+
+
+.dependenteGroup{
+  display:none;
+}  
+
+#youtube:hover{color: red}
+#twitter:hover{color: #1dcaff}
+#facebook:hover{color: #3b5998}
+
+
+

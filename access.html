@@ -39,15 +39,16 @@
         <div class="collapse navbar-collapse" id="navbar-nav-header">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contato</a>
+                    <a class="nav-link" id="headerContato" href="contact.html">Contato</a>
                 </li> 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html"><b>Voltar</b></a>
+                    <a class="nav-link" id="headerVoltar" href="index.html"><b>Voltar</b></a>
                 </li> 
             </ul>
         </div>
     </div>
 </nav>
+<!-- Login start -->
 <section id="gtco-blog" class="">
     <div class="container ">
         <div class="section-content">
@@ -66,14 +67,14 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text inr-users" id="strEmail"></span>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1">
+                                            <input type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" required>
                                         </div>
                                         <!-- confirmar email -->
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text inr-users" id="strPassword"></span>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1">
+                                            <input type="text" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1" required>
                                         </div>
                                         <div class="col-auto my-1">
                                             <div class="custom-control custom-checkbox mr-sm-2">
@@ -82,7 +83,7 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Acessar</button>
-                                        <button type="submit" class="btn btn-warning">Recuperar dados</button>
+                                        <button type="button" href="recover.html" class="btn btn-warning">Recuperar dados</button>
                                     </form>
                                 </div>
                             </div>
@@ -93,7 +94,10 @@
         </div>
     </div>
 </section>
-	
+<!-- Login End -->
+	<script>
+        
+    </script>
 	<!-- External JS -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 	<script src="vendor/bootstrap/popper.min.js"></script>

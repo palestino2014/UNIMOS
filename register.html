@@ -49,7 +49,6 @@
             </ul>
         </div>
     </div>
-    
 </nav>
 	<!-- Blog Section -->
 <section id="gtco-blog" class="bg-grey">
@@ -66,60 +65,64 @@
                                     <div class="blog-tag align-items-center mx-auto"  style="width: 100px;">
                                         <h4><small>REGISTRAR</small></h4>
                                     </div>
+
                                     <form class="mb-3">
                                         <!-- radios -->
                                         <div class="form-row mb-3 mx-auto align-items-center">
                                             <div class="btn-group btn-group-toggle mx-auto align-items-center" data-toggle="buttons">
-                                                <label class="btn btn-outline-primary" onclick="hideChild()">
+                                                <label class="btn btn-outline-primary active" onclick="showStudent()">
                                                     <input type="radio" name="options" id="radioAluno" autocomplete="off" checked> Sou aluno
                                                 </label>
-                                                <label class="btn btn-outline-primary" onclick="showChild()">
+                                                <label class="btn btn-outline-primary" onclick="showRepresentant()">
                                                     <input type="radio" name="options" id="radioResponsavel" autocomplete="off"> Sou responsável
                                                 </label>
-                                                <label class="btn btn-outline-primary" onclick="showHide()">
+                                                <label class="btn btn-outline-primary" onclick="showTeacher()">
                                                     <input type="radio" name="options" id="radioProfessor" autocomplete="off"> Sou professor
                                                 </label>
-                                                <label class="btn btn-outline-primary" onclick="showHide()">
+                                                <label class="btn btn-outline-primary" onclick="showSchool()">
                                                     <input type="radio" name="options" id="radioSchool" autocomplete="off"> Sou escola
                                                 </label>
                                             </div>
                                         </div>
-                                        <!-- nome -->
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                            <span class="input-group-text inr-users" id="strName"></span>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Username" aria-describedby="basic-addon1">
-                                        </div>
-                                        <div class="form-row">
-                                            <!-- cpf -->
-                                            <div class="input-group col-md-6 mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text inr-users" id="numCPF"></span>
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="CPF" aria-label="cpf" aria-describedby="basic-addon1">
-                                            </div>
-                                            <!-- telefone -->
-                                            <div class="input-group col-md-6 mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text inr-users" id="numTelephone"></span>
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="Telefone" aria-label="telefone" aria-describedby="basic-addon1">
-                                            </div>
+                                        
+                                        <!-- cadastro aluno -->
+                                        <form action="" id="alunoForm" class="mb-3">
+
+                                        </form>
+                                        <!-- fim cadastro aluno -->
+                                        <!-- cadastro responsavel -->
+                                        <form action="" id="responsavelForm" class="mb-3">
+
+                                        </form>
+                                        <!-- fim cadastro responsavel -->
+
+                                        <!-- cadastro professor -->
+                                        <form action="" id="professorForm" class="mb-3">
+
+                                        </form>
+                                        <!-- fim cadastro professor -->
+                                        <!-- cadastro escola -->
+                                        <form action="" id="escolaForm" class="mb-3">
+
+                                        </form>
+                                        <!-- fim cadastro escola -->
+
+                                        <div class="blog-tag align-items-center mx-auto">
+                                            <h5><small>Dados para Acesso</small></h5>
                                         </div>
                                         <!-- email -->
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text inr-users" id="strEmail"></span>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1">
+                                            <input type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" required>
                                         </div>
                                         <!-- confirmar email -->
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text inr-users" id="strEmailConfirm"></span>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Confirmar email" aria-label="confirmar-email" aria-describedby="basic-addon1">
+                                            <input type="email" class="form-control" placeholder="Confirmar email" aria-label="confirmar-email" aria-describedby="basic-addon1" required>
                                         </div>
                                         <!-- Senha -->
                                         <div class="form-row">
@@ -127,46 +130,342 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text inr-users" id="strPassword"></span>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1" required>
                                             </div>
                                             <!-- Confirmar Senha -->
                                             <div class="input-group col-md-6 mb-3">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text inr-users" id="strPasswordConfirm"></span>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Confirmar senha" aria-label="confirmar-senha" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control" placeholder="Confirmar senha" aria-label="confirmar-senha" aria-describedby="basic-addon1" required>
                                             </div>
                                         </div>
-                                            
-                                        <!-- dependente -->
-                                        <div id="dependenteGroup" style="display:none">
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text inr-users" id="strNameComplete2"></span>
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="Nome completo do Aluno" aria-label="Nome dependente" aria-describedby="basic-addon1">
+                                        <!-- end common inputs -->
+                                        <!-- Responsavel inputs -->
+                                        <div id="dependents" style="display: none">
+                                            <div class="blog-tag align-items-center mx-auto">
+                                                <h5><small>Dados pessoais</small></h5>
                                             </div>
-                                        
+                                            <!-- nome -->
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
-                                                    <span class="input-group-text inr-users" id="intAge"></span>
+                                                <span class="input-group-text inr-users" id="strName"></span>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Idade" aria-label="idade" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control" placeholder="Nome completo do responsável" aria-label="Username" aria-describedby="basic-addon1" required>
+                                            </div>
+                                            <div class="form-row">
+                                                <!-- cpf -->
+                                                <div class="input-group col-md-6 mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text inr-users" id="numCPF"></span>
+                                                    </div>
+                                                    <input type="text" title="CPF deve conter 11 dígitos" class="form-control" placeholder="CPF" aria-label="cpf" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                </div>
+                                                <!-- rg -->
+                                                <div class="input-group col-md-6 mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text inr-users" id="numRg"></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="RG" aria-label="RG" aria-describedby="basic-addon1" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <!-- nascimento -->
+                                                <div class="input-group col-md-6 mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text inr-users" id="birhDate"></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Data de nascimento" aria-label="Data de Nascimento" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                </div>
+                                                <!-- genero -->
+                                                <div class="input-group col-md-6 mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text inr-users" id="chGender"></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <!-- Telefone -->
+                                                <div class="input-group col-md-6 mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text inr-users" id="numTelephone"></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                </div>
+                                                <!-- Pref contato -->
+                                                <div class="input-group col-md-6 mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text inr-users" id="contactPref"></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Preferência de contato" aria-label="Preferência de contato" aria-describedby="basic-addon1">
+                                                </div>
+                                            </div>
+                                            <!-- dependente -->
+                                            <div id="studentGroup" >
+                                                <div class="blog-tag align-items-center mx-auto">
+                                                    <h5><small>Dados do dependente</small></h5>
+                                                </div>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text inr-users" id="strNameComplete2"></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Nome completo do Aluno" aria-label="Nome dependente" aria-describedby="basic-addon1" required>
+                                                </div>
+                                                <div class="form-row">
+                                                    <!-- nascimento -->
+                                                    <div class="input-group col-md-6 mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text inr-users" id="birhDateStudent"></span>
+                                                        </div>
+                                                        <input type="text" class="form-control" placeholder="Data de nascimento" aria-label="Data de Nascimento" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                    </div>
+                                                    <!-- genero -->
+                                                    <div class="input-group col-md-6 mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text inr-users" id="chGenderStudent"></span>
+                                                        </div>
+                                                        <input type="text" class="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" required>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary" type="submit">Registrar</button>
+                                        <!-- dependente end -->
+
+                                   <!-- Sem dependentes inputs -->
+                                   <div id="semDependentes" style="display:block">
+                                        <div class="blog-tag align-items-center mx-auto">
+                                            <h5><small>Dados pessoais</small></h5>
+                                        </div>
+                                        <!-- nome -->
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text inr-users" id="strName"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Nome completo do responsável" aria-label="Username" aria-describedby="basic-addon1" required>
+                                        </div>
+                                        <div class="form-row">
+                                            <!-- cpf -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="numCPF"></span>
+                                                </div>
+                                                <input type="text" title="CPF deve conter 11 dígitos" class="form-control" placeholder="CPF" aria-label="cpf" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                            </div>
+                                            <!-- rg -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="numRg"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="RG" aria-label="RG" aria-describedby="basic-addon1" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <!-- nascimento -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="birhDate"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Data de nascimento" aria-label="Data de Nascimento" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                            </div>
+                                            <!-- genero -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="chGender"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <!-- Telefone -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="numTelephone"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                            </div>
+                                            <!-- Pref contato -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="contactPref"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Preferência de contato" aria-label="Preferência de contato" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End Sem dependentes inputs -->
+
+                                    <!-- School inputs -->
+                                    <div id="school" style="display: none">
+                                        <div class="blog-tag align-items-center mx-auto">
+                                            <h5><small>Dados da Instituição de ensino</small></h5>
+                                        </div>
+                                        <!-- nome fantasia -->
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text inr-users" id="strName"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Nome fantasia" aria-label="nomefantasia" aria-describedby="basic-addon1" required>
+                                        </div>
+                                        <!-- nome PJ -->
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text inr-users" id="strNamePj"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Nome pessoa júridica" aria-label="nomepj" aria-describedby="basic-addon1" required>
+                                        </div>
+                                        <!-- nome adm -->
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text inr-users" id="strNameSchoolAdm"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Nome completo do responsável pela instituição" aria-label="nomepj" aria-describedby="basic-addon1" required>
+                                        </div>
+                                        <div class="form-row">
+                                        <!-- Telefone -->
+                                        <div class="input-group col-md-6 mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text inr-users" id="numTelephone"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                        </div>
+                                        <!-- CNPJ -->
+                                        <div class="input-group col-md-6 mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text inr-users" id="schoolCNPJ"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="CNPJ" aria-label="CNPJ" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <!-- endereço -->
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text inr-users" id="strEndereco"></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Endereço da escola" aria-label="Endereco da escola" aria-describedby="basic-addon1" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <!-- num -->
+                                        <div class="input-group col-md-3 mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text inr-users" id="intNumSchool"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Número" aria-label="Número" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                        </div>
+                                        <!-- Bairro / Cidade -->
+                                        <div class="input-group col-md-5 mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text inr-users" id="strBairro"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Bairro / Cidade" aria-label="cidade" aria-describedby="basic-addon1" required>
+                                        </div>
+                                        <!-- Bairro / Cidade -->
+                                        <div class="input-group col-md-4 mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text inr-users" id="strType"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Tipo" aria-label="tipo" aria-describedby="basic-addon1" required>
+                                        </div>
+                                    </div>
+                                    <!-- end School inputs -->
+
+                                    <!-- professor inputs -->
+                                    <div id="teacher" style="display: none">
+                                        <div class="blog-tag align-items-center mx-auto">
+                                            <h5><small>Dados pessoais</small></h5>
+                                        </div>
+                                        <!-- nome -->
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text inr-users" id="strName"></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Nome completo" aria-label="Username" aria-describedby="basic-addon1" required>
+                                        </div>
+                                        <div class="form-row">
+                                            <!-- cpf -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="numCPF"></span>
+                                                </div>
+                                                <input type="text" title="CPF deve conter 11 dígitos" class="form-control" placeholder="CPF" aria-label="cpf" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                            </div>
+                                            <!-- rg -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="numRg"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="RG" aria-label="RG" aria-describedby="basic-addon1" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <!-- nascimento -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="birhDate"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Data de nascimento" aria-label="Data de Nascimento" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                            </div>
+                                            <!-- genero -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="chGender"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <!-- Telefone -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="numTelephone"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                            </div>
+                                            <!-- PIS -->
+                                            <div class="input-group col-md-6 mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text inr-users" id="pis"></span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="PIS" aria-label="PIS" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End professor inputs -->
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Registrar</button>
                                     </form>
                                 </div>
                             </div>
-
+                            <!-- SCRITP -->
                             <script>
-                                function showChild() {
-                                    document.getElementById('dependenteGroup').style.display = 'block';
+                                function showStudent() {
+                                    clear();
+                                    document.getElementById('semDependentes').style.display = 'block';
                                 }
 
-                                function hideChild(){
-                                    document.getElementById('dependenteGroup').style.display = 'none';
+                                function showRepresentant(){
+                                    clear();
+                                    document.getElementById('dependents').style.display = 'block';
                                 }
+
+                                function showTeacher(){
+                                    clear();
+                                    document.getElementById('teacher').style.display = 'block';
+                                }
+
+                                function showSchool(){
+                                    clear();
+                                    document.getElementById('school').style.display = 'block';
+                                }
+
+                                function clear(){
+                                    document.getElementById('semDependentes').style.display = 'none';
+                                    document.getElementById('dependents').style.display = 'none';
+                                    document.getElementById('school').style.display = 'none';
+                                    document.getElementById('teacher').style.display = 'none';
+
+                                }
+
                             </script>
                         </div>
                         <!-- End of Item -->
@@ -183,7 +482,6 @@
          	<div class="col-md-6 d-flex align-items-center justify-content-md-start justify-content-center">
          		<p class="mb-0">Unimos</p>
          	</div>
-           
             <div class="col-md-6">
             	<nav class="nav nav-mastfoot justify-content-md-end justify-content-center">
 	                <a class="nav-link" id="facebook" href="https://www.facebook.com/groups/1735988899961162/">
@@ -197,7 +495,6 @@
 	                </a>
 	            </nav>
             </div>
-            
         </div>
     </div>
 </footer>	</div>

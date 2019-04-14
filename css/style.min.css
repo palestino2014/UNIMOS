@@ -321,6 +321,10 @@ a:hover {
 .grid-title {
   text-align: center; }
 
+#calendar{
+  margin-top: -270px;
+}
+
 .blog-item {
   transition: all 0.3s ease-in-out;
   background-color: #f7f8f9;
@@ -478,6 +482,13 @@ footer {
     background-color: #fff; } }
 
 @media (max-width: 767px) {
+  #sidebar {
+    margin-left: -250px;
+}
+#sidebar.active {
+    margin-left: 0;
+}
+
   .boxed-page {
     margin: 4rem 15px; }
   .not-on-top #gtco-header-navbar {
@@ -494,11 +505,6 @@ footer {
     width: 100%; }
   .card-deck {
     flex-direction: column; } }
-
-
-.dependenteGroup{
-  display:none;
-}  
 
 #youtube:hover{color: red}
 #twitter:hover{color: #1dcaff}

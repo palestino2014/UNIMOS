@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link href="https://file.myfontastic.com/7vRKgqrN3iFEnLHuqYhYuL/icons.css" rel="stylesheet">
 
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
@@ -44,28 +47,291 @@
                 <div class="collapse navbar-collapse" id="navbar-nav-header">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
+                            <a class="nav-link" href="about.html">Ação 01</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Ação 02</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Ação 03</a>
+                        </li>
+                        <li class="nav-item">
+                            <span>&nbsp;|&nbsp;</span>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="about.html">Sobre</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contato</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a class="nav-link" href="register.html">Registrar</a>
                         </li>
                         <li>
                             <a class="nav-link" href="access.html"><b>Entrar</b></a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- End Navigation bar -->
-        
+
+        <div class="jumbotron d-flex align-items-center">
+            <div class="container text-center">
+                <!-- <div class="row">
+                <div class="blog-item col-md-5" id="calendar">
+                    <div class="blog-text">
+                        <div class="blog-tag align-items-center mx-auto" style="width: 200px;">
+                            <h4><small>PRÓXIMAS AULAS</small></h4>
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                <th scope="col">Dia</th>
+                                <th scope="col">Aula</th>
+                                <th scope="col">Escola</th>
+                                <th scope="col">Pagamento</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Tambor</td>
+                                    <td>ABC</td>
+                                    <td>OK</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Guitarra</td>
+                                    <td>DEF</td>
+                                    <td>Aguardando</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td >Violão</td>
+                                    <td>GHI</td>
+                                    <td>OK</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td >Violão</td>
+                                    <td>GHI</td>
+                                    <td>OK</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td >Violão</td>
+                                    <td>GHI</td>
+                                    <td>OK</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="blog-item col-md-5" id="schedule">
+                    <div class="blog-text">
+                        <div class="blog-tag align-items-center mx-auto" style="width: 200px;">
+                            <h4><small>AGENDAR AULAS</small></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item col-md-5" id="contract">
+                    <div class="blog-text">
+                        <div class="blog-tag align-items-center mx-auto" style="width: 200px;">
+                            <h4><small>VER CONTRATO</small></h4>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="blog-item col-md-5" id="profile">
+                    <div class="blog-text">
+                        <div class="blog-tag align-items-center mx-auto" style="width: 200px;">
+                            <h4><small>PERFIL</small></h4>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row">
+                    <!-- Blog -->
+                    <div class="col-md-12 blog-holder">
+                        <div class="row">
+                            <!-- Blog Item -->
+                            <div class="col-md-4 blog-item-wrapper">
+                                <div class="blog-item">
+                                    <div class="blog-text alert-primary">
+                                        <div class="blog-tag">
+                                            <a href="#"><h6><small></small></h6></a>
+                                        </div>
+                                        <div class="blog-title">
+                                            <a href="#"><h4>AGENDA</h4></a>
+                                        </div>
+                                        <div class="blog-meta">
+                                            <p class="blog-date">Próxima aula:</p> /
+                                            <p class="blog-comment"><a href="">23/05/2019</a></p>
+                                            <p class="blog-comment">Professor Jefferson Mendes</p>
+                                        </div>
+                                        <div class="blog-desc">
+                                            <p></p>
+                                        </div>
+                                        <div class="blog-author">
+                                         
+                                        </div>
+                                        <div class="blog-share-wrapper">
+                      
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Blog Item -->
+                            <!-- Blog Item -->
+                            <div class="col-md-4 blog-item-wrapper">
+                                <div class="blog-item">
+                                    <div class="blog-text alert-info">
+                                        <div class="blog-tag">
+                                            <a href="#"><h6><small></small></h6></a>
+                                        </div>
+                                        <div class="blog-title">
+                                            <a href="table.html"><h4>PAGAMENTOS</h4></a>
+                                        </div>
+                                        <div class="blog-meta">
+                                            <p class="blog-date">Próximo pagamento:</p> /
+                                            <p class="blog-comment"><a href="">23/05/2019</a></p>
+                                            <p class="blog-comment">Status: PAGO</p>
+                                        </div>
+                                        <div class="blog-desc">
+                                            <p></p>
+                                        </div>
+                                        <div class="blog-author">
+                                            
+                                        </div>
+                                        <div class="blog-share-wrapper">
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Blog Item -->
+                            <!-- Blog Item -->
+                            <div class="col-md-4 blog-item-wrapper">
+                                <div class="blog-item">
+                                    <div class="blog-text alert-success">
+                                        <div class="blog-tag">
+                                            <a href="#"><h6><small></small></h6></a>
+                                        </div>
+                                        <div class="blog-title">
+                                            <a href="table.html"><h4>ESCOLAS</h4></a>
+                                        </div>
+                                        <div class="blog-meta">
+                                            <p class="blog-date">Consulte escolas</p>
+                                        
+                                        </div>
+                                        <div class="blog-desc">
+                                            <p></p>
+                                        </div>
+                                        <div class="blog-author">
+                                            
+                                        </div>
+                                        <div class="blog-share-wrapper">
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Blog Item -->
+                        </div>
+                        <div class="row">
+                            <!-- Blog Item -->
+                            <div class="col-md-4 blog-item-wrapper">
+                                <div class="blog-item">
+                                    <div class="blog-text alert-danger">
+                                        <div class="blog-tag">
+                                            <a href="#"><h6><small></small></h6></a>
+                                        </div>
+                                        <div class="blog-title">
+                                            <a href="table.html"><h4>PROFESSORES</h4></a>
+                                        </div>
+                                        <div class="blog-meta">
+                                            <p class="blog-date">Consulte professores disponíveis</p>
+                                        
+                                        </div>
+                                        <div class="blog-desc">
+                                            <p></p>
+                                        </div>
+                                        <div class="blog-author">
+                                            
+                                        </div>
+                                        <div class="blog-share-wrapper">
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Blog Item -->
+                            <!-- Blog Item -->
+                            <div class="col-md-4 blog-item-wrapper">
+                                <div class="blog-item">
+                                    <div class="blog-text alert-warning">
+                                        <div class="blog-tag">
+                                            <a href="#"><h6><small></small></h6></a>
+                                        </div>
+                                        <div class="blog-title">
+                                            <a href="profile.html"><h4>PERFIL</h4></a>
+                                        </div>
+                                        <div class="blog-meta">
+                                            <p class="blog-date">Consulte e edite seu perfil</p>
+                                        
+                                        </div>
+                                        <div class="blog-desc">
+                                            <p></p>
+                                        </div>
+                                        <div class="blog-author">
+                                            
+                                        </div>
+                                        <div class="blog-share-wrapper">
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Blog Item -->
+                            <!-- Blog Item -->
+                            <div class="col-md-4 blog-item-wrapper">
+                                <div class="blog-item">
+                                    <div class="blog-text alert-secondary">
+                                        <div class="blog-tag">
+                                            <a href="#"><h6><small></small></h6></a>
+                                        </div>
+                                        <div class="blog-title">
+                                            <a href="#"><h4>CONTRATO</h4></a>
+                                        </div>
+                                        <div class="blog-meta">
+                                            <p class="blog-date">Consulte os termos do seu contrato</p>
+                                        
+                                        </div>
+                                        <div class="blog-desc">
+                                            <p></p>
+                                        </div>
+                                        <div class="blog-author">
+                                            
+                                        </div>
+                                        <div class="blog-share-wrapper">
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Blog Item -->
+                        </div>
+                    </div>
+                    <!-- End of Blog -->
+                </div>
+            </div>
+        </div>
         <!-- counter -->
         <section id="gtco-counter" class="overlay bg-fixed">
             <div class="container">
                 <div class="section-content">
-                        DAHSBOARD
+                        
                 </div>
             </div>
         </section>
@@ -95,6 +361,7 @@
         </footer>	
     </div>
     <!-- Box End -->
+
 	<!-- External JS -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 	<script src="vendor/bootstrap/popper.min.js"></script>

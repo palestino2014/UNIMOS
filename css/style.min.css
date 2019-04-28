@@ -506,6 +506,14 @@ footer {
   .card-deck {
     flex-direction: column; } }
 
+    #profilePicture {
+      
+      position: relative;
+      width: 30% !important;
+      min-height: 1px;
+
+    }
+
 #youtube:hover{color: red}
 #twitter:hover{color: #1dcaff}
 #facebook:hover{color: #3b5998}

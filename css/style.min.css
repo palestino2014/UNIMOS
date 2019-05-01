@@ -44,7 +44,11 @@ body {
     .boxed-page .container {
       max-width: 1080px;
       padding-left: 30px;
-      padding-right: 30px; } }
+      padding-right: 30px; } 
+    
+      #pdfObject{
+        width: 100%
+      }}
 
 h1 {
   font-size: 4.8rem; }
@@ -469,7 +473,10 @@ footer {
     margin-left: 30px; }
   .not-on-top #gtco-header-navbar {
     margin-right: 30px;
-    margin-left: 30px; } }
+    margin-left: 30px; }
+    #pdfObject{
+      width: 80%
+    } }
 
 @media (max-width: 992px) {
   #navbar-nav-header .navbar-nav {
@@ -488,23 +495,31 @@ footer {
 #sidebar.active {
     margin-left: 0;
 }
+.btn-group, .btn-group-vertical {
 
-  .boxed-page {
-    margin: 4rem 15px; }
-  .not-on-top #gtco-header-navbar {
-    margin-right: 15px;
-    margin-left: 15px; }
-  .counter-item {
-    margin-bottom: 40px; }
-    .counter-item:last-child {
-      margin-bottom: 0; }
-  .section-title br,
-  .section-sub-title br {
-    display: none; }
-  .grid-item {
-    width: 100%; }
-  .card-deck {
-    flex-direction: column; } }
+  display: grid !important;
+  width: 100%;
+  /* vertical-align: middle; */
+}
+#pdfObject{
+  width: 80%
+}
+.boxed-page {
+  margin: 4rem 15px; }
+.not-on-top #gtco-header-navbar {
+  margin-right: 15px;
+  margin-left: 15px; }
+.counter-item {
+  margin-bottom: 40px; }
+  .counter-item:last-child {
+    margin-bottom: 0; }
+.section-title br,
+.section-sub-title br {
+  display: none; }
+.grid-item {
+  width: 100%; }
+.card-deck {
+  flex-direction: column; } }
 
     #profilePicture {
       

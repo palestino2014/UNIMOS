@@ -105,9 +105,13 @@ p {
   margin-bottom: 30px; }
 
 .btn {
+  margin: 10px;
   font-size: 1.6rem;
   padding: .7rem 1rem; }
 
+  .btnRegister{
+    margin: 0px !important
+  }
 img {
   max-width: 100%; }
 
@@ -115,8 +119,13 @@ a:focus,
 button:focus {
   outline: none; }
 
-.btn:hover,
+/* .btn:hover,
 a:hover {
+  text-decoration: none;
+  color: white; } */
+  a:hover {
+    text-decoration: none; }
+  .btn:hover{
   text-decoration: none;
   color: white; }
 

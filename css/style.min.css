@@ -513,6 +513,17 @@ footer {
       min-height: 1px;
 
     }
+    .card-header {
+      background-color: white !important;
+  }
+
+    .pills-bg{
+      background-color: white !important;
+    }
+
+    .nav-pills > .active > a, .nav-pills > .active > a:hover {
+      background-color: red !important;
+  }
 
 #youtube:hover{color: red}
 #twitter:hover{color: #1dcaff}

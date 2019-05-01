@@ -538,6 +538,7 @@ footer {
       position: relative;
       width: 50% !important;
       min-height: 1px;
+      margin-top: 20px;
 
     }
     .card-header {

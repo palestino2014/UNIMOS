@@ -104,6 +104,10 @@ p {
 .section-sub-title {
   margin-bottom: 30px; }
 
+  .dropdown-item {
+    font-size: 1.6rem !important;
+}
+
 .btn {
   margin: 10px;
   font-size: 1.6rem;
@@ -488,7 +492,7 @@ footer {
     margin-right: 30px;
     margin-left: 30px; }
     #pdfObject{
-      width: 80%
+      width: 90%
     } }
 
 @media (max-width: 992px) {
@@ -523,7 +527,7 @@ footer {
 }
 
 #pdfObject{
-  width: 80%
+  width: 90%
 }
 .boxed-page {
   margin: 4rem 15px; }
@@ -562,9 +566,23 @@ footer {
       background-color: red !important;
   }
 
+
+
 #youtube:hover{color: red}
 #twitter:hover{color: #1dcaff}
 #facebook:hover{color: #3b5998}
 
+.nav-tabs > li, .nav-pills > li {
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+   zoom:1; /* hasLayout ie7 trigger */
+}
 
+#pills-tab {
+  display: block !important;
+}
 
+.nav-tabs, .nav-pills {
+  text-align:center;
+}

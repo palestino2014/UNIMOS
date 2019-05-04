@@ -564,6 +564,9 @@ footer {
       opacity: 0;
       top: 0;
     }
+    .btnAddRemove{
+      margin: 0px !important;
+    }
     .card-header {
       background-color: white !important;
   }

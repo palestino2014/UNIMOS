@@ -89,8 +89,8 @@
                                 href="#pills-contract" role="tab" aria-controls="pills-contract" aria-selected="false">Contrato</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="pills-schedule-tab" data-toggle="pill" 
-                                href="#pills-schedule" role="tab" aria-controls="pills-schedule" aria-selected="false">Planejamento</a>
+                                <a class="nav-link" id="pills-management-tab" data-toggle="pill" 
+                                href="#pills-management" role="tab" aria-controls="pills-management" aria-selected="false">Gerenciar</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="pills-attend-tab" data-toggle="pill" 
@@ -237,88 +237,142 @@
                                     <a href="Documents/requisitos.pdf">Download contrato.</a>
                                 </object>
                             </div>
-                            <!-- SCHEDULE CLASSES -->
-                            <div class="tab-pane fade" id="pills-schedule" role="tabpanel" aria-labelledby="pills-schedule-tab">
-                                
-                                <!-- conteúdo curso -->
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text inr-users" id="strCourseContent"></span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Conteúdo do curso" aria-label="conteúdo curso" aria-describedby="basic-addon1" required>
-                                </div>
-                                <!-- Descrição da proposta da aula. -->
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text inr-users" id="strDescription"></span>
-                                    </div>
-                                    <textarea type="text" class="form-control" placeholder="Descrição da proposta da aula" aria-label="Descrição da proposta da aula." aria-describedby="basic-addon1" required></textarea>
-                                </div>
-                                <!-- quantidade alunos -->
-                                <form name="qtdAlunos">
-                                    <label for="">Quantidade de alunos por turma</label>
-                                    <output name="outputName" id="outputId">5</output>
-                                    <input type="range" name="inputRange"value="5" id="inputRange" class="custom-range" min="1" max="50" step="1" oninput="outputId.value = inputRange.value">
-                                </form>
-                                <!-- tipos de aulas -->
-                                RF16:4 <br>
+                            <!-- MANAGEMENT CLASSES -->
 
-                                <!-- tipo de cobranca -->
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-outline-primary btnRegister active">
-                                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Cobrança por hora
-                                    </label>
-                                    <label class="btn btn-outline-primary btnRegister">
-                                        <input type="radio" name="options" id="option2" autocomplete="off"> Cobrança por mês
-                                    </label>
-                                </div>
-                                <br>
-                                <br>
-                                <form name="valores">
-                                    <label for="">Custo: </label>
-                                    <output name="valueName" id="valueId">100.00</output>
-                                    <input type="range" name="inputValue" value="100.00" id="inputValue" class="custom-range" min="1.00" max="500.00" step="0.5" oninput="valueId.value = inputValue.value">
-                                </form>
+                                    <div class="tab-pane fade" id="pills-management" role="tabpanel" aria-labelledby="pills-management-tab">
+                                        <div class="card text-center">
+                                            <div class="card-header">
+                                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" id="pills-registerClass-tab" data-toggle="pill" href="#pills-registerClass" role="tab" aria-controls="pills-registerClass" aria-selected="true">Cadastrar Aulas</a>
+                                                    </li>
+                                                    <!-- <li class="nav-item">
+                                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                                                    </li> -->
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" id="pills-schedule-tab" data-toggle="pill" href="#pills-schedule" role="tab" aria-controls="pills-schedule" aria-selected="false">Planejar Aulas</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content" id="pills-tabContent1">
+                                                    <div class="tab-pane fade" id="pills-registerClass" role="tabpanel" aria-labelledby="pills-registerClass-tab">
+                                                            
 
-                                <!-- unidades de ensino -->
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Selecione a Unidade de ensino
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#" selected>ESCOLA UNIMOS</a>
-                                        <a class="dropdown-item" href="#">ESCOLA CASA DA MUSICA</a>
-                                        <a class="dropdown-item" href="#">ESCOLA DE MUSICA </a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Nao achou a escola? Entre em contato com o administrador UNIMOS.</a>
-                                    </div>
-                                </div>
-                                <!-- alunos lista -->
-                                <div class="row">
-                                        RF16:4 <br>
-                                    <label for="">Adicionar alunos a turma</label>
+                                                    </div>
+                                                    <!-- <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Profile</div> -->
+                                                    <div class="tab-pane fade" id="pills-schedule" role="tabpanel" aria-labelledby="pills-schedule-tab">
+                                                        
 
-                                    <div class="col-5">
-                                        <div class="list-group" id="list-tab" role="tablist">
-                                            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Jefferson</a>
-                                            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Pedro</a>
-                                            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Gustavo</a>
-                                            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Berenice</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-5">
-                                        <div class="list-group" id="list-tab" role="tablist">
-                                            <a class="list-group-item list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Jefferson</a>
-                                            <a class="list-group-item list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Jefferson</a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
+                            <!-- <div class="tab-pane fade" id="pills-management" role="tabpanel" aria-labelledby="pills-management-tab">
+                                <ul class="nav nav-pills mb-3 pills-bg" id="pills-tab1" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-lessons-tab" data-toggle="pill" 
+                                        href="#pills-lessons" role="tab" aria-controls="pills-lessons" aria-selected="true">Cadastrar Aulas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-schedule-tab" data-toggle="pill" 
+                                        href="#pills-schedule" role="tab" aria-controls="pills-schedule" aria-selected="true">Planejamento de Aulas</a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-pane fade" id="pills-lessons" role="tabpanel" aria-labelledby="pills-lessons-tab">
+                                    
+                                    conteúdo curso 
+                                <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text inr-users" id="strCourseContent"></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Conteúdo do curso" aria-label="conteúdo curso" aria-describedby="basic-addon1" required>
+                                    </div>
+                                    Descrição da proposta da aula. 
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text inr-users" id="strDescription"></span>
+                                        </div>
+                                        <textarea type="text" class="form-control" placeholder="Descrição da proposta da aula" aria-label="Descrição da proposta da aula." aria-describedby="basic-addon1" required></textarea>
+                                    </div>
+                                    quantidade alunos 
+                                    <form name="qtdAlunos">
+                                        <label for="">Quantidade de alunos por turma</label>
+                                        <output name="outputName" id="outputId">5</output>
+                                        <input type="range" name="inputRange"value="5" id="inputRange" class="custom-range" min="1" max="50" step="1" oninput="outputId.value = inputRange.value">
+                                    </form>
+                                     tipos de aulas 
+                                    RF16:4 <br>
+    
+                                    tipo de cobranca 
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-outline-primary btnRegister active">
+                                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Cobrança por hora
+                                        </label>
+                                        <label class="btn btn-outline-primary btnRegister">
+                                            <input type="radio" name="options" id="option2" autocomplete="off"> Cobrança por mês
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <form name="valores">
+                                        <label for="">Custo: </label>
+                                        <output name="valueName" id="valueId">100.00</output>
+                                        <input type="range" name="inputValue" value="100.00" id="inputValue" class="custom-range" min="1.00" max="500.00" step="0.5" oninput="valueId.value = inputValue.value">
+                                    </form>
+    
+                                     unidades de ensino 
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Selecione a Unidade de ensino
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#" selected>ESCOLA UNIMOS</a>
+                                            <a class="dropdown-item" href="#">ESCOLA CASA DA MUSICA</a>
+                                            <a class="dropdown-item" href="#">ESCOLA DE MUSICA </a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Nao achou a escola? Entre em contato com o administrador UNIMOS.</a>
+                                        </div>
+                                    </div>
+                                    
+
+                                </div>
+                                <div class="tab-pane fade" id="pills-schedule" role="tabpanel" aria-labelledby="pills-schedule-tab">
+                                    alunos lista 
+                                    <div class="row">
+                                            RF16:4 <br>
+                                        <label for="">Adicionar alunos a turma</label>
+    
+                                        <div class="row col-md-12">
+                                            <div class="col-5">
+                                                <div class="list-group" id="list-tab" role="tablist">
+                                                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Jefferson</a>
+                                                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Pedro</a>
+                                                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Gustavo</a>
+                                                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Berenice</a>
+                                                </div>
+                                            </div>
+    
+                                            <div class="btn-group-vertical" role="group" aria-label="Basic example">
+                                                <button type="button" class="btn btn-outline-primary btn-group-sm btnAddRemove"><b>+</b></button>
+                                                <button type="button" class="btn btn-outline-primary btn-group-sm btnAddRemove"><b>-</b></button>
+                                            </div>
+    
+                                            <div class="col-5">
+                                                <div class="list-group" id="list-tab" role="tablist">
+                                                    <a class="list-group-item list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Jefferson</a>
+                                                    <a class="list-group-item list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Jefferson</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <br>
                                 <br>
                                 <a href="#" class="btn btn-primary">Salvar</a>
-                            </div>
+                            </div> -->
                             <!-- ATTENDING CONTROL -->
                             <div class="tab-pane fade" id="pills-attend" role="tabpanel" aria-labelledby="pills-attend-tab">
                                 

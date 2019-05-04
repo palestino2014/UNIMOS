@@ -7,6 +7,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>UNIMOS</title>
+    <link rel="icon" href="img/icon.png">
+
     <meta name="description" content="Core HTML Project">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <META http-equiv="Page-Enter" CONTENT="RevealTrans(Duration=5,Transition=12)">
@@ -227,9 +229,13 @@
                                 <div class="row text-align-center" style="display: block;">
                                     <div id="total"></div>
                                 </div>
-                                Interface Pagamento
-                                <br>
-                                <a href="#" class="btn btn-primary">Pagar</a>
+                                <form action="https://www.paypal.com/webapps/adaptivepayment/flow/pay" target="PPDGFrame">
+                                    <input id="type" type="hidden" name="expType" value="light">
+                                    <input id="paykey" type="hidden" name="paykey" value="AP-...">
+                                    <input id="preapprovalkey" type="hidden" name="preapprovalkey" value="PA-...">
+                                    <input type="submit" class="btn btn-info" id="submitBtn" value="Pagar com PayPal">
+                                </form>
+
                             </div>
                             <!-- CONTRACT VISUALIZATION -->
                             <div class="tab-pane fade" id="pills-contract" role="tabpanel" aria-labelledby="pills-contact-tab">
@@ -255,12 +261,12 @@
                                                 </ul>
                                                 <div class="tab-content" id="pills-tabContent1">
                                                     <div class="tab-pane fade" id="pills-registerClass" role="tabpanel" aria-labelledby="pills-registerClass-tab">
-                                                            
+                                                            TAB 01
 
                                                     </div>
                                                     <!-- <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Profile</div> -->
                                                     <div class="tab-pane fade" id="pills-schedule" role="tabpanel" aria-labelledby="pills-schedule-tab">
-                                                        
+                                                        TAB 02
 
                                                     </div>
                                                 </div>

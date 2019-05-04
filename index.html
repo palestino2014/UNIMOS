@@ -69,11 +69,9 @@
 
         <div class="jumbotron d-flex">
             <div class="container text-center">
- 
                 <div class="blog-title">
                     <h4>Home</h4>
                 </div>
-
                 <div class="card text-center">
                     <div class="card-header">
                         <!-- MENU OPTIONS  -->
@@ -118,6 +116,7 @@
                                                 <th scope="col">Aula</th>
                                                 <th scope="col">Professor</th>
                                                 <th scope="col">Local</th>
+                                                <th scope="col">Valor</th>
                                                 <th scope="col">
                                                     <img src="img/payment.png" width="25px" alt="">
                                                 </th>           
@@ -129,35 +128,40 @@
                                                     <td>Piano</td>
                                                     <td>Jefferson</td>
                                                     <td>Escola Berenice dos Teclados</td>
-                                                    <td class="bg-success text-white"></td>
+                                                    <td>150.00</td>
+                                                    <td class="text-success"><b>Pago</b></td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">3/06/2019</th>
                                                     <td>Gaita</td>
                                                     <td>Gustavo</td>
                                                     <td>Escola Agogo</td>
-                                                    <td class="bg-success text-white"></td>
+                                                    <td>150.00</td>
+                                                    <td class="text-success"><b>Pago</b></td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">23/05/2019</th>
                                                     <td>Guitarra</td>
                                                     <td>Pedro</td>
                                                     <td>Escola UNIMOS</td>
-                                                    <td class="bg-danger text-white"></td>
+                                                    <td>50.00</td>
+                                                    <td class="text-danger"><b>?</b></td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">3/06/2019</th>
                                                     <td>Gaita</td>
                                                     <td>Gustavo</td>
                                                     <td>Escola Agogo</td>
-                                                    <td class="bg-success text-white"></td>
+                                                    <td>150.00</td>
+                                                    <td class="text-success"><b>Pago</b></td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">23/05/2019</th>
                                                     <td>Guitarra</td>
                                                     <td>Pedro</td>
                                                     <td>Escola UNIMOS</td>
-                                                    <td class="bg-danger text-white"></td>
+                                                    <td>100.00</td>
+                                                    <td class="text-danger"><b>?</b></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -175,6 +179,7 @@
                                                 <th scope="col">Aula</th>
                                                 <th scope="col">Professor</th>
                                                 <th scope="col">Local</th>
+                                                <th scope="col">Valor</th>
                                                 <th scope="col">
                                                     <img src="img/payment.png" width="20px" alt="">
                                                 </th>           
@@ -183,39 +188,53 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" aria-label="Checkbox for following text input">
+                                                    <input onclick="sumValues(this)" type="checkbox" aria-label="Checkbox for following text input">
                                                 </td>
                                                 <th scope="row">23/05/2019</th>
                                                 <td>Guitarra</td>
                                                 <td>Pedro</td>
                                                 <td>Escola UNIMOS</td>
-                                                <td class="bg-danger text-white"></td>
+                                                <td class="lessonValue">50.00</td>
+                                                <td class="text-danger"><b>?</b></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" aria-label="Checkbox for following text input">
+                                                    <input onclick="sumValues(this)" type="checkbox" aria-label="Checkbox for following text input">
                                                 </td>
                                                 <th scope="row">23/05/2019</th>
                                                 <td>Guitarra</td>
                                                 <td>Pedro</td>
                                                 <td>Escola UNIMOS</td>
-                                                <td class="bg-danger text-white"></td>
+                                                <td class="lessonValue">100.00</td>
+                                                <td class="text-danger"><b>?</b></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <div id="total">
-                                    Total: 150,00
+                                <script>
+                                 function sumValues(lesson){
+                                    var sumValues;
+                                    var divValues = document.getElementById("total");
+                                    var checkboxes = document.getElementsByClassName("lessonValue");
+                                    
+                                     for (var i = 0; i < checkboxes.size; i++){
+                                         sumValues += checkboxes[i].value;
+                                     }       
+
+                                    divValues.innerHTML = "Total: " + sumValues;
+                                 }
+                                </script>
+                                <div class="row text-align-center" style="display: block;">
+                                    <div id="total"></div>
                                 </div>
                                 Interface Pagamento
                                 <br>
-                                <a href="#" class="btn btn-primary">Pagar Selecionado</a>
+                                <a href="#" class="btn btn-primary">Pagar</a>
                             </div>
                             <!-- CONTRACT VISUALIZATION -->
                             <div class="tab-pane fade" id="pills-contract" role="tabpanel" aria-labelledby="pills-contact-tab">
                                 <object data="Documents/requisitos.pdf" type="application/pdf" id="pdfObject" height="800px">
                                     <a href="Documents/requisitos.pdf">Download contrato.</a>
-                                </p>
                                 </object>
                             </div>
                             <!-- SCHEDULE CLASSES -->
@@ -296,8 +315,6 @@
 
                                 </div>
 
-
-                                
                                 <br>
                                 <br>
                                 <a href="#" class="btn btn-primary">Salvar</a>
@@ -424,10 +441,13 @@
                                                 
                                                 <img src="img/Img/profile.png" class="img-responsive img-rounded" alt="profile">
                                                 
-                                                <a href="#" class="btn btn-warning col-md-12 btn-sm">
+                                                <div id="divUploadPic" class="file btn-warning col-md-12">
                                                     <span>Trocar</span>
+                                                    <input type="file" name="uploadPic" id="uploadPic">
+                                                </div>
+                                                <!-- <a href="#" class="btn btn-warning col-md-12 btn-sm">
                                                     <input type="file" name="changePic" class="custom-file-input" id="uploadPic">
-                                                </a>
+                                                </a> -->
                                             </div>
                                             <!-- End Profile PIC -->
                                             <!-- Item -->
@@ -581,7 +601,7 @@
                     </div>
                     <!-- MENU OPTIONS CONTENT  -->
                     <div class="card-body">
-                        <a href="contact.html" class="btn btn-warning">Tenho um problema</a>
+                        <a href="contact.html" class="btn btn-warning">Enviar Mensagem</a>
                     </div>
                 </div>
             </div>
@@ -594,13 +614,13 @@
                     </div>
                     <div class="col-md-6">
                         <nav class="nav nav-mastfoot justify-content-md-end justify-content-center">
-                            <a class="nav-link" id="facebook" href="https://www.facebook.com/groups/1735988899961162/">
+                            <a class="nav-link" id="facebook" onCLick="window.open('https://www.facebook.com/groups/1735988899961162/','_blank');" href="">
                                 <i class="icon-facebook"></i>
                             </a>
-                            <a class="nav-link" id="twitter" href="https://twitter.com/_unimos">
+                            <a class="nav-link" id="twitter" onCLick="window.open('https://twitter.com/_unimos','_blank');" href="">
                                 <i class="icon-twitter"></i>
                             </a>
-                            <a class="nav-link" id="youtube" href="https://www.youtube.com/channel/UCbmv7bsQU3AHVQiQBRGHA-Q">
+                            <a class="nav-link" id="youtube" onCLick="window.open('https://www.youtube.com/channel/UCbmv7bsQU3AHVQiQBRGHA-Q','_blank');" href="">
                                 <i class="icon-youtube"></i>
                             </a>
                         </nav>

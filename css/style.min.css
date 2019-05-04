@@ -554,6 +554,16 @@ footer {
       margin-top: 20px;
 
     }
+    #divUploadPic {
+      position: relative;
+      overflow: hidden;
+    }
+    #uploadPic{
+      position: absolute;
+      font-size: 50px;
+      opacity: 0;
+      top: 0;
+    }
     .card-header {
       background-color: white !important;
   }

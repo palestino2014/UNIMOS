@@ -60,12 +60,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">Sair</a>
                         </li>
-                        <!-- <li>
-                            <a class="nav-link" href="register.html">Registrar</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="access.html"><b>Entrar</b></a>
-                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -114,7 +108,7 @@
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                                 <div class="card-body ">
                                     <div class="table-responsive">
-                                        <table class="table table-hover table-sm">
+                                        <table id="tableAgenda" class="table table-hover table-sm">
                                             <thead>
                                                 <tr>
                                                 <th scope="col">Dia</th>
@@ -176,7 +170,7 @@
                             <!-- PAYMENT OPTIONS -->
                             <div class="tab-pane fade" id="pills-payment" role="tabpanel" aria-labelledby="pills-payment-tab">
                                 <div class="table-responsive">
-                                    <table class="table table-hover table-sm">
+                                    <table id="tablePayment" class="table table-hover table-sm">
                                         <thead>
                                             <tr>
                                                 <th scope="col"></th>
@@ -239,6 +233,7 @@
                                 <div class="row text-align-center" style="display: block;">
                                     <div id="total"></div>
                                 </div>
+                                <!-- Paypal button -->
                                 <form action="https://www.paypal.com/webapps/adaptivepayment/flow/pay" target="PPDGFrame">
                                     <input id="type" type="hidden" name="expType" value="light">
                                     <input id="paykey" type="hidden" name="paykey" value="AP-...">
@@ -250,7 +245,7 @@
                             <!-- CONTRACT VISUALIZATION -->
                             <div class="tab-pane fade" id="pills-contract" role="tabpanel" aria-labelledby="pills-contact-tab">
                                 <object data="Documents/requisitos.pdf" type="application/pdf" id="pdfObject" height="800px">
-                                    <a href="Documents/requisitos.pdf">Download contrato.</a>
+                                    <a id="pdfContrato" href="Documents/requisitos.pdf">Download contrato.</a>
                                 </object>
                             </div>
                             <!-- MANAGEMENT CLASSES -->
@@ -276,7 +271,7 @@
                                                                 $('select').selectpicker();
                                                             </script>
                                                             <!-- root teaching unit -->
-                                                            <div class="">
+                                                            <div id="registeredSchools" class="">
                                                                 <span>Escolha a Unidade de Ensino do espaço</span>
                                                                 <select class="selectpicker col-md-12 show-tick" data-size="10" data-style="btn-outline-primary" title="" multiple>
                                                                     <option data-subtext="Subtext">Escola UNIMOS</option>
@@ -287,10 +282,10 @@
                                                             </div>
                         
                                                             <div class="form-group">
-                                                                <label for="formControlTextarea1">Descrição do ambiente</label>
-                                                                <textarea class="form-control" id="formControlTextarea" rows="3"></textarea>
+                                                                <label for="schoolDescription">Descrição do ambiente</label>
+                                                                <textarea class="form-control" id="schoolDescription" rows="3"></textarea>
                                                             </div>
-                                                            <div class="">
+                                                            <div id="weekDays" class="">
                                                                 <span>Escolha os dias de curso</span>
                                                                 <select class="selectpicker col-md-12 show-tick align-items-center" data-size="auto" data-style="btn-outline-primary" title="" multiple>
                                                                     <option data-subtext="-Feira">Segunda</option>
@@ -304,20 +299,20 @@
                                                             </div>
                                                             <div>
                                                                 <span>Tipo de cobrança</span>
-                                                                <form class="mb-3">
+                                                                <form id="paymentModality" action="" class="mb-3">
                                                                         <!-- radios -->
                                                                     <div class="form-row mb-3 mx-auto align-items-center">
                                                                         <div class="btn-group btn-group-toggle mx-auto align-items-center" data-toggle="buttons">
-                                                                            <label class="btn btn-outline-primary btnRegister active" onclick="showStudent()">
+                                                                            <label class="btn btn-outline-primary btnRegister active">
                                                                                 <input type="radio" name="options" id="radioAluno" autocomplete="off" checked> Sem cobrança
                                                                             </label>
-                                                                            <label class="btn btn-outline-primary btnRegister" onclick="showRepresentant()">
+                                                                            <label class="btn btn-outline-primary btnRegister">
                                                                                 <input type="radio" name="options" id="radioResponsavel" autocomplete="off"> Hora
                                                                             </label>
-                                                                            <label class="btn btn-outline-primary btnRegister" onclick="showTeacher()">
+                                                                            <label class="btn btn-outline-primary btnRegister">
                                                                                 <input type="radio" name="options" id="radioProfessor" autocomplete="off"> Mensal
                                                                             </label>
-                                                                            <label class="btn btn-outline-primary btnRegister" onclick="showSchool()">
+                                                                            <label class="btn btn-outline-primary btnRegister">
                                                                                 <input type="radio" name="options" id="radioSchool" autocomplete="off"> % da aula
                                                                             </label>
                                                                         </div>
@@ -344,7 +339,7 @@
                                                             </div>
                                                             <!-- unidades de ensino  -->
                                                             <div class="input-group mb-3">
-                                                                <select class="selectpicker show-tick col-md-12" data-size="10" data-style="btn-outline-primary" 
+                                                                <select id="registeredSchools" class="selectpicker show-tick col-md-12" data-size="10" data-style="btn-outline-primary" 
                                                                 title="Escolha a Unidade de Ensino onde será oferecido o curso" multiple>
                                                                     <option data-subtext="Subtext">Escola UNIMOS</option>
                                                                     <option>Escola 27</option>
@@ -358,14 +353,14 @@
                                                             <!-- quantidade alunos  -->
                                                             <form name="qtdAlunos">
                                                                 <label for="">Quantidade de alunos por turma</label>
-                                                                <output name="outputName" id="outputId">5</output>
+                                                                <output name="outputName" id="outputIdstudents">5</output>
                                                                 <input type="range" name="inputRange"value="5" id="inputRange" class="custom-range" min="1" max="50" step="1" oninput="outputId.value = inputRange.value">
                                                             </form>
                                                             <!-- tipos de aulas  -->
 
                                                             <form name="valores">
                                                                 <label for="">Custo: </label>
-                                                                <output name="valueName" id="valueId">100.00</output>
+                                                                <output name="valueName" id="valueIdLessons">100.00</output>
                                                                 <input type="range" name="inputValue" value="100.00" id="inputValue" class="custom-range" min="1.00" max="500.00" step="0.5" oninput="valueId.value = inputValue.value">
                                                             </form>
                                                             <!-- tipo de cobranca  -->
@@ -389,7 +384,7 @@
                                                         <!-- Courses list -->
                                                         <div class="">
                                                             <span></span>
-                                                            <select class="selectpicker show-tick col-md-12" data-size="10" data-style="btn-outline-primary" title="Selecione o curso">
+                                                            <select id="registeredLessons" class="selectpicker show-tick col-md-12" data-size="10" data-style="btn-outline-primary" title="Selecione o curso">
                                                                 <option data-subtext="18:30">Gaitinha melodiosa</option>
                                                                 <option data-subtext="09:30">Gaitinha melodiosa</option>
                                                                 <option data-subtext="10:30">Gaitinha melodiosa</option>
@@ -426,10 +421,7 @@
                                                             </div>
                                                         </div>
                                                         <a href="#" class="btn btn-primary">Salvar</a>
-
-                                                    </div>
-
-                                                       
+                                                    </div>                                             
 Escolha uma opção
                                                 </div>
                                             </div>

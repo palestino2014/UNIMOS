@@ -599,3 +599,14 @@ footer {
 .nav-tabs, .nav-pills {
   text-align:center;
 }
+
+.btn-group-sm>.btn, .btn-sm  {
+  font-size: 1.8rem !important; 
+
+}
+
+.dropdown-item {
+
+  text-align: center !important;
+
+}

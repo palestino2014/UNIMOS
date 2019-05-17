@@ -37,7 +37,7 @@
             <span class="lnr lnr-menu"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar-nav-header">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto  align-items-center">
                 <li class="nav-item">
                     <a class="nav-link" id="headerContato" href="contact.html">Contato</a>
                 </li> 
@@ -67,14 +67,14 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text inr-users" id="strEmail"></span>
                                             </div>
-                                            <input type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" required>
+                                            <input type="email" id="emailLogin" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" required>
                                         </div>
                                         <!-- confirmar email -->
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text inr-users" id="strPassword"></span>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1" required>
+                                            <input type="text" id="passwordLogin" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1" required>
                                         </div>
                                         <div class="col-auto my-1">
                                             <div class="custom-control custom-checkbox mr-sm-2">
@@ -82,8 +82,8 @@
                                                     <label class="custom-control-label" for="customControlAutosizing">Lembrar dados</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Acessar</button>
-                                        <button type="button" href="recover.html" class="btn btn-warning">Recuperar dados</button>
+                                        <button type="submit" id="btnAccess" class="btn btn-primary">Acessar</button>
+                                        <button type="button" id="btnRecoverData" onclick="window.location.href = './recover.html';" class="btn btn-warning">Recuperar dados</button>
                                     </form>
                                 </div>
                             </div>

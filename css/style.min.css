@@ -44,7 +44,11 @@ body {
     .boxed-page .container {
       max-width: 1080px;
       padding-left: 30px;
-      padding-right: 30px; } }
+      padding-right: 30px; } 
+    
+      #pdfObject{
+        width: 100%
+      }}
 
 h1 {
   font-size: 4.8rem; }
@@ -100,10 +104,18 @@ p {
 .section-sub-title {
   margin-bottom: 30px; }
 
+  .dropdown-item {
+    font-size: 1.6rem !important;
+}
+
 .btn {
+  margin: 10px;
   font-size: 1.6rem;
   padding: .7rem 1rem; }
 
+  .btnRegister{
+    margin: 0px !important
+  }
 img {
   max-width: 100%; }
 
@@ -111,8 +123,13 @@ a:focus,
 button:focus {
   outline: none; }
 
-.btn:hover,
+/* .btn:hover,
 a:hover {
+  text-decoration: none;
+  color: white; } */
+  a:hover {
+    text-decoration: none; }
+  .btn:hover{
   text-decoration: none;
   color: white; }
 
@@ -232,6 +249,10 @@ a:hover {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 15px 0px;
   border-radius: 0; }
 
+  .table-responsive
+{
+    overflow-x: auto;
+}
 .jumbotron {
   background-color: #fff;
   padding-top: 80px;
@@ -427,6 +448,9 @@ footer {
   margin-bottom: 15px;
   height: 38px;
   font-weight: 300; }
+  .uf {
+    margin-bottom: 0px !important;
+}
   .form-control:focus {
     border-color: gray;
     box-shadow:  0px 0px 0px grey; } /*input border*/
@@ -469,7 +493,10 @@ footer {
     margin-left: 30px; }
   .not-on-top #gtco-header-navbar {
     margin-right: 30px;
-    margin-left: 30px; } }
+    margin-left: 30px; }
+    #pdfObject{
+      width: 90%
+    } }
 
 @media (max-width: 992px) {
   #navbar-nav-header .navbar-nav {
@@ -488,27 +515,114 @@ footer {
 #sidebar.active {
     margin-left: 0;
 }
+.btn-group, .btn-group-vertical {
 
-  .boxed-page {
-    margin: 4rem 15px; }
-  .not-on-top #gtco-header-navbar {
-    margin-right: 15px;
-    margin-left: 15px; }
-  .counter-item {
-    margin-bottom: 40px; }
-    .counter-item:last-child {
-      margin-bottom: 0; }
-  .section-title br,
-  .section-sub-title br {
-    display: none; }
-  .grid-item {
-    width: 100%; }
-  .card-deck {
-    flex-direction: column; } }
+  display: grid !important;
+  width: 100%;
+  /* vertical-align: middle; */
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  font-size: 12px !important;
+}
+
+#pdfObject{
+  width: 90%
+}
+.boxed-page {
+  margin: 4rem 15px; }
+.not-on-top #gtco-header-navbar {
+  margin-right: 15px;
+  margin-left: 15px; }
+.counter-item {
+  margin-bottom: 40px; }
+  .counter-item:last-child {
+    margin-bottom: 0; }
+.section-title br,
+.section-sub-title br {
+  display: none; }
+.grid-item {
+  width: 100%; }
+.card-deck {
+  flex-direction: column; } }
+
+    #profilePicture {
+      
+      position: relative;
+      width: 50% !important;
+      min-height: 1px;
+      margin-top: 20px;
+
+    }
+    #divUploadPic {
+      position: relative;
+      overflow: hidden;
+    }
+    #uploadPic{
+      position: absolute;
+      font-size: 50px;
+      opacity: 0;
+      top: 0;
+    }
+    .btnAddRemove{
+      margin: 0px !important;
+    }
+    .card-header {
+      background-color: white !important;
+  }
+
+    .pills-bg{
+      background-color: white !important;
+    }
+
+    .nav-pills > .active > a, .nav-pills > .active > a:hover {
+      background-color: red !important;
+  }
+
+
 
 #youtube:hover{color: red}
 #twitter:hover{color: #1dcaff}
 #facebook:hover{color: #3b5998}
 
+.nav-tabs > li, .nav-pills > li {
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+   zoom:1; /* hasLayout ie7 trigger */
+}
 
+#pills-tab {
+  display: block !important;
+}
 
+.nav-tabs, .nav-pills {
+  text-align:center;
+}
+
+.btn-group-sm>.btn, .btn-sm  {
+  font-size: 1.8rem !important; 
+
+}
+
+.dropdown-item {
+
+  text-align: center !important;
+
+}
+
+.bootstrap-select .dropdown-toggle .filter-option {
+  text-align: center !important;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+  color: #007bff !important;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus{
+  color: #fff !important;
+
+}

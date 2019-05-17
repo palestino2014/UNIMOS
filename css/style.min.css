@@ -613,3 +613,16 @@ footer {
   text-align: center !important;
 
 }
+
+.bootstrap-select .dropdown-toggle .filter-option {
+  text-align: center !important;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+  color: #007bff !important;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus{
+  color: #fff !important;
+
+}

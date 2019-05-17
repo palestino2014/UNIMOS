@@ -34,6 +34,7 @@
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
 </head>
 <body data-spy="scroll" data-target="#navbar-nav-header" class="static-layout">
@@ -187,52 +188,57 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <input onclick="sumValues(this)" type="checkbox" aria-label="Checkbox for following text input">
+                                                    <input id="chkBox" class="checky" value="50.35" type="checkbox" aria-label="Checkbox for following text input">
                                                 </td>
                                                 <th scope="row">23/05/2019</th>
                                                 <td>Guitarra</td>
                                                 <td>Pedro</td>
                                                 <td>Escola UNIMOS</td>
-                                                <td class="lessonValue">50,00</td>
+                                                <td class="lessonValue">50,35</td>
                                                 <td class="text-danger"><b>?</b></td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <input onclick="sumValues(this)" type="checkbox" aria-label="Checkbox for following text input">
+                                                    <input id="chkBox" class="checky" value="100.50" type="checkbox" aria-label="Checkbox for following text input">
                                                 </td>
                                                 <th scope="row">23/05/2019</th>
                                                 <td>Guitarra</td>
                                                 <td>Pedro</td>
                                                 <td>Escola UNIMOS</td>
-                                                <td class="lessonValue">100,00</td>
+                                                <td class="lessonValue">100,50</td>
                                                 <td class="text-danger"><b>?</b></td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <span class="st-icon-pandora">Valor R$:</span><div id="total">0</div>
+
                                 </div>
+
                                 <script>
-                                 function sumValues(lesson){
-                                    var sumValues = "0,00";
-                                    var divValues = document.getElementById("total");
-                                    
-                                    var checkboxes = document.getElementsByClassName("lessonValue");
-                                    
-                                    
-                                     for (var i = 0; i < checkboxes.length; i++){
+                                    var $checky = $("input[type=checkbox].checky");
+                                        $checky.click(function() {
+                                        //calculateTotal();
+                                        if ($(this).is(":checked")) {
+                                            calculateTotal();
 
-                                         if (checkboxes[i].checked == true){
-                                            var aux= checkboxes[i].innerText;
-                                            sumValues = parseFloat(sumValues) + parseFloat(aux);
+                                        } else {
+                                            var index = $(this).closest("tr").attr("data-index");
+                                            calculateTotal();
                                         }
-                                    }   
-                                         
+                                    });
 
-                                    divValues.innerHTML = "Total: " + sumValues;
+                                 function calculateTotal() {
+                                    //if($(this).is(":checked")) {
+                                    var total = 0;
+
+                                    $checky.filter(":checked").each(function() {
+                                        total = parseFloat(total) + parseFloat($(this).val());
+                                    });
+                                    $("#total").text(total);
+                                    
                                  }
                                 </script>
-                                <div class="row text-align-center" style="display: block;">
-                                    <div id="total"></div>
-                                </div>
+
                                 <!-- Paypal button -->
                                 <form action="https://www.paypal.com/webapps/adaptivepayment/flow/pay" target="PPDGFrame">
                                     <input id="type" type="hidden" name="expType" value="light">
@@ -249,45 +255,38 @@
                                 </object>
                             </div>
                             <!-- MANAGEMENT CLASSES -->
-
                                     <div class="tab-pane fade" id="pills-management" role="tabpanel" aria-labelledby="pills-management-tab">
                                         <div class="card text-center">
                                             <div class="card-header">
                                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                                     <li class="nav-item">
-                                                        <a class="nav-link" id="pills-teachingPlaces-tab" data-toggle="pill" href="#pills-teachingPlaces" role="tab" aria-controls="pills-teachingPlaces" aria-selected="true">Cadastrar espaços</a>
+                                                        <a class="nav-link" id="pills-teachingPlaces-tab" data-toggle="pill" href="#pills-teachingPlaces" 
+                                                        role="tab" aria-controls="pills-teachingPlaces" aria-selected="true">Cadastrar espaços</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" id="pills-registerClass-tab" data-toggle="pill" href="#pills-registerClass" role="tab" aria-controls="pills-registerClass" aria-selected="true">Cadastrar Aulas</a>
+                                                        <a class="nav-link" id="pills-registerClass-tab" data-toggle="pill" href="#pills-registerClass" 
+                                                        role="tab" aria-controls="pills-registerClass" aria-selected="true">Cadastrar Aulas</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" id="pills-schedule-tab" data-toggle="pill" href="#pills-schedule" role="tab" aria-controls="pills-schedule" aria-selected="false">Planejar Aulas</a>
+                                                        <a class="nav-link" id="pills-schedule-tab" data-toggle="pill" href="#pills-schedule" 
+                                                        role="tab" aria-controls="pills-schedule" aria-selected="false">Planejar Aulas</a>
                                                     </li>
                                                 </ul>
                                                 <div class="tab-content" id="pills-tabContent1">
                                                     <div class="tab-pane fade" id="pills-teachingPlaces" role="tabpanel" aria-labelledby="pills-teachingPlaces-tab">
                                                         <form action="">
-                                                            <script>
-                                                                $('select').selectpicker();
-                                                            </script>
                                                             <!-- root teaching unit -->
                                                             <div id="registeredSchools" class="">
-                                                                <span>Escolha a Unidade de Ensino do espaço</span>
-                                                                <select class="selectpicker col-md-12 show-tick" data-size="10" data-style="btn-outline-primary" title="" multiple>
+                                                                <select class="selectpicker col-md-8" title="Escolha a Unidade de Ensino do espaço" data-size="10" data-style="btn-outline-primary" title="" multiple>
                                                                     <option data-subtext="Subtext">Escola UNIMOS</option>
                                                                     <option>Escola 27</option>
                                                                     <option>Escola gaita nervosa</option>
                                                                     <option>Escola Palestina</option>
                                                                 </select>
                                                             </div>
-                        
-                                                            <div class="form-group">
-                                                                <label for="schoolDescription">Descrição do ambiente</label>
-                                                                <textarea class="form-control" id="schoolDescription" rows="3"></textarea>
-                                                            </div>
+
                                                             <div id="weekDays" class="">
-                                                                <span>Escolha os dias de curso</span>
-                                                                <select class="selectpicker col-md-12 show-tick align-items-center" data-size="auto" data-style="btn-outline-primary" title="" multiple>
+                                                                <select title="Escolha os dias de curso" class="selectpicker col-md-8 show-tick align-items-center" data-size="auto" data-style="btn-outline-primary" title="" multiple>
                                                                     <option data-subtext="-Feira">Segunda</option>
                                                                     <option data-subtext="-Feira">Terça</option>
                                                                     <option data-subtext="-Feira">Quarta</option>
@@ -318,50 +317,50 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                        </form>  
+                                                                    <div class="form-group">
+                                                                        <!-- <label for="schoolDescription">Descrição do ambiente</label> -->
+                                                                        <textarea class="form-control" title="Descrição do ambiente" placeholder="Descrição do ambiente" id="schoolDescription" rows="3"></textarea>
+                                                                    </div>
+                                                                </form>  
                                                         <a href="#" class="btn btn-primary">Salvar</a>
                                                     </div>
                                                     <div class="tab-pane fade" id="pills-registerClass" role="tabpanel" aria-labelledby="pills-registerClass-tab">
                                                         <form action="">
+                                                                <div class="mb-3 text-align-center">
+                                                               <!-- unidades de ensino  -->
+                                                            
+                                                                    <!-- <div class="input-group-prepend col-12"> -->
+                                                                    <select id="registeredSchools" class="selectpicker col-md-8" data-size="10" data-style="btn-outline-primary" 
+                                                                    title="Escolha a Unidade de Ensino onde será oferecido o curso" multiple>
+                                                                        <option data-subtext="Subtext">Escola UNIMOS</option>
+                                                                        <option>Escola 27</option>
+                                                                        <option>Escola gaita nervosa</option>
+                                                                        <option>Escola Palestina</option>
+                                                                        <option>Escola gaita nervosa Escola gaita nervosa</option>
+                                                                        <option>Escola gaita nervosa</option>
+                                                                        <option>Escola gaita nervosa</option>
+                                                                    </select>
+                                                                </div>  
                                                             <!-- conteúdo curso  -->
                                                             <div class="input-group mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text inr-users" id="strCourseContent"></span>
-                                                                </div>
-                                                                <input type="text" class="form-control" placeholder="Conteúdo do curso" aria-label="conteúdo curso" aria-describedby="basic-addon1" required>
+                                                                <input type="text" class="form-control col-md-12" placeholder="Conteúdo do curso" aria-label="conteúdo curso" aria-describedby="basic-addon1" required>
                                                             </div>
                                                             <!-- Descrição da proposta da aula.  -->
                                                             <div class="input-group mb-3">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text inr-users" id="strDescription"></span>
-                                                                </div>
-                                                                <textarea type="text" class="form-control" placeholder="Descrição da proposta da aula" aria-label="Descrição da proposta da aula." aria-describedby="basic-addon1" required></textarea>
+                                                                <textarea type="text" class="form-control col-md-12" placeholder="Descrição da proposta da aula" aria-label="Descrição da proposta da aula." aria-describedby="basic-addon1" required></textarea>
                                                             </div>
-                                                            <!-- unidades de ensino  -->
-                                                            <div class="input-group mb-3">
-                                                                <select id="registeredSchools" class="selectpicker show-tick col-md-12" data-size="10" data-style="btn-outline-primary" 
-                                                                title="Escolha a Unidade de Ensino onde será oferecido o curso" multiple>
-                                                                    <option data-subtext="Subtext">Escola UNIMOS</option>
-                                                                    <option>Escola 27</option>
-                                                                    <option>Escola gaita nervosa</option>
-                                                                    <option>Escola Palestina</option>
-                                                                    <option>Escola gaita nervosa</option>
-                                                                    <option>Escola gaita nervosa</option>
-                                                                    <option>Escola gaita nervosa</option>
-                                                                </select>
-                                                            </div>
+                                                            <!-- </div> -->
                                                             <!-- quantidade alunos  -->
                                                             <form name="qtdAlunos">
                                                                 <label for="">Quantidade de alunos por turma</label>
                                                                 <output name="outputName" id="outputIdstudents">5</output>
-                                                                <input type="range" name="inputRange"value="5" id="inputRange" class="custom-range" min="1" max="50" step="1" oninput="outputId.value = inputRange.value">
+                                                                <input type="range" name="inputRange"value="5" id="inputRange" class="custom-range" min="1" max="50" step="1" oninput="outputIdstudents.value = inputRange.value">
                                                             </form>
                                                             <!-- tipos de aulas  -->
-
                                                             <form name="valores">
                                                                 <label for="">Custo: </label>
                                                                 <output name="valueName" id="valueIdLessons">100.00</output>
-                                                                <input type="range" name="inputValue" value="100.00" id="inputValue" class="custom-range" min="1.00" max="500.00" step="0.5" oninput="valueId.value = inputValue.value">
+                                                                <input type="range" name="inputValue" value="100.00" id="inputValue" class="custom-range" min="1.00" max="500.00" step="0.5" oninput="valueIdLessons.value = inputValue.value">
                                                             </form>
                                                             <!-- tipo de cobranca  -->
                                                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -372,10 +371,10 @@
                                                                     <input type="radio" name="options" id="option2" autocomplete="off"> Cobrança por mês
                                                                 </label>
                                                             </div>
-
                                                         </form>
-                                                        <a href="#" class="btn btn-primary">Salvar</a>
-
+                                                        <div class="row">
+                                                            <a href="#" class="btn btn-primary">Salvar</a>
+                                                        </div>
                                                     </div>
                                                     <!-- <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Profile</div> -->
                                                     <div class="tab-pane fade" id="pills-schedule" role="tabpanel" aria-labelledby="pills-schedule-tab">
@@ -384,7 +383,7 @@
                                                         <!-- Courses list -->
                                                         <div class="">
                                                             <span></span>
-                                                            <select id="registeredLessons" class="selectpicker show-tick col-md-12" data-size="10" data-style="btn-outline-primary" title="Selecione o curso">
+                                                            <select id="registeredLessons" class="selectpicker show-tick col-md-8" data-size="10" data-style="btn-outline-primary" title="Selecione o curso">
                                                                 <option data-subtext="18:30">Gaitinha melodiosa</option>
                                                                 <option data-subtext="09:30">Gaitinha melodiosa</option>
                                                                 <option data-subtext="10:30">Gaitinha melodiosa</option>
@@ -409,8 +408,8 @@
                                                             </div>
                                         
                                                             <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                                                                <button type="button" class="btn btn-outline-primary btn-group-sm btnAddRemove"><b>+</b></button>
-                                                                <button type="button" class="btn btn-outline-primary btn-group-sm btnAddRemove"><b>-</b></button>
+                                                                <button type="button" id="btnAdd" class="btn btn-outline-primary btn-group-sm btnAddRemove"><b>+</b></button>
+                                                                <button type="button" id="btnRemove" class="btn btn-outline-primary btn-group-sm btnAddRemove"><b>-</b></button>
                                                             </div>
                                         
                                                             <div class="col-5">
@@ -420,6 +419,14 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        <script>
+
+                                                        
+                                                        $("#ViewRows").on("click", "a#btnRemove", function () {
+                                                            $(this).parent().remove();
+                                                        });
+                                                        </script>
                                                         <a href="#" class="btn btn-primary">Salvar</a>
                                                     </div>                                             
 Escolha uma opção

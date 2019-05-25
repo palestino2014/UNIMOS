@@ -648,3 +648,11 @@ footer {
     width: 1.5rem;
     height: 1.5rem;
 }
+
+input[type="file"] {
+  display: none;
+}
+
+img {
+  cursor: pointer;
+}

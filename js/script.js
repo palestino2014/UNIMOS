@@ -25,3 +25,9 @@ function hideLabel(status){
     document.getElementById('pickAnOptionLabel').style.display= status;
 }
 
+var imgBtn = document.getElementsByClassName('profilePicture');
+var fileInp = document.querySelector('[type="file"]');
+
+// imgBtn.addEventListener('click', function() {
+//   fileInp.click();
+// })

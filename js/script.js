@@ -20,3 +20,8 @@ function calculateTotal() {
     $("#total").text(total);
     
 }
+
+function hideLabel(status){
+    document.getElementById('pickAnOptionLabel').style.display= status;
+}
+

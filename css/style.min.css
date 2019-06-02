@@ -108,14 +108,25 @@ p {
     font-size: 1.6rem !important;
 }
 
+.custom-range {
+  width: 66% !important;
+  
+}
+
 .btn {
-  margin: 10px;
+  margin-bottom: 10px;
   font-size: 1.6rem;
   padding: .7rem 1rem; }
 
-  .btnRegister{
-    margin: 0px !important
-  }
+.col-md-8{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.btnRegister{
+  margin: 0px !important
+}
+
 img {
   max-width: 100%; }
 
@@ -509,6 +520,10 @@ footer {
     background-color: #fff; } }
 
 @media (max-width: 767px) {
+  .custom-range {
+    width: 100% !important;
+    
+  }
   #sidebar {
     margin-left: -250px;
 }
@@ -625,4 +640,31 @@ footer {
 .bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus{
   color: #fff !important;
 
+}
+
+.custom-control-label::before, 
+.custom-control-label::after {
+    top: .6rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+img {
+  cursor: pointer;
+}
+
+#btnAdd, #btnRemove{
+  margin-bottom: 10px !important;
+}
+
+
+.list-group{
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow-y:scroll;
+  -webkit-overflow-scrolling: touch;
 }

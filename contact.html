@@ -67,24 +67,24 @@
             <div class="row">
                 <!-- Contact Form Holder -->
                 <div class="col-md-8 offset-md-2 contact-form-holder mt-4">
-                    <form method="post" name="contact-us" action="">
+                    <form method="post" name="contato" action="inserirContato.php">
                         <div class="row">
                             <div class="col-md-6 form-input">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Nome">
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
                             </div>
                             <div class="col-md-6 form-input">
                                 <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                             </div>
                             <div class="col-md-12 form-input">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Título">
+                                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título">
                             </div>
                             <div class="col-md-12 form-textarea">
-                                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Sua Mensagem ..."></textarea>
+                                <textarea class="form-control" id="mensagem" name="mensagem" rows="6" placeholder="Sua Mensagem ..."></textarea>
                             </div>
                             <div class="col-md-12 form-btn text-center">
-                                <button class="btn btn-block btn-outline-primary" type="button" name="submit"  data-toggle="modal" data-target="#contactModal">Enviar Mensagem</button>
                             </div>
                         </div>
+                        <button class="btn btn-block btn-outline-primary" type="submit" name="submit">Registrar</button>
                     </form>
                 </div>
                 <!-- End of Contact Form Holder -->
@@ -131,13 +131,13 @@
                 Email enviado.
             </div>
             <div class="modal-footer">
-                <button type="button" id="btnClose" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                <button type="button" id="btnClose" class="btn btn-outline-primary" data-dismiss="modal">Close</button>                
             </div>
             </div>
         </div>
     </div>
     <!-- MODAL END -->
-	
+
 </div>
 	<!-- External JS -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>

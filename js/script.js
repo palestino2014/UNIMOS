@@ -25,9 +25,15 @@ function hideLabel(status){
     document.getElementById('pickAnOptionLabel').style.display= status;
 }
 
-var imgBtn = document.getElementsByClassName('profilePicture');
-var fileInp = document.querySelector('[type="file"]');
 
-// imgBtn.addEventListener('click', function() {
-//   fileInp.click();
-// })
+function moveOnClick(element){
+    var allStudents = document.getElementById('allStudents');
+    element.remove();
+
+}
+// var imgBtn = document.getElementsByClassName('profilePicture');
+// var fileInp = document.querySelector('[type="file"]');
+
+// // imgBtn.addEventListener('click', function() {
+// //   fileInp.click();
+// // })

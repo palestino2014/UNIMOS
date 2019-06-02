@@ -3,15 +3,14 @@
 <html lang="pt">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>UNIMOS</title>
     <link rel="icon" href="img/icon.png">
-
     <meta name="description" content="Core HTML Project">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <META http-equiv="Page-Enter" CONTENT="RevealTrans(Duration=5,Transition=12)">
+
     <!-- External CSS -->
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="vendor/select2/select2.min.css">
@@ -26,19 +25,22 @@
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link href="https://file.myfontastic.com/7vRKgqrN3iFEnLHuqYhYuL/icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
-
-
+    
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-
+    
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
 
+
+    <script src="js/script.js"></script>
 </head>
 <body data-spy="scroll" data-target="#navbar-nav-header" class="static-layout">
-
+    
     <!-- box -->
 	<div class="boxed-page">
         <!-- navigation bar -->
@@ -246,13 +248,18 @@
                                     <input id="preapprovalkey" type="hidden" name="preapprovalkey" value="PA-...">
                                     <input type="submit" class="btn btn-info" id="submitBtn" value="Pagar com PayPal">
                                 </form>
-
                             </div>
                             <!-- CONTRACT VISUALIZATION -->
                             <div class="tab-pane fade" id="pills-contract" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                <div class="custom-control custom-checkbox ">
+                                    <input type="checkbox" class="custom-control-input" id="contractOkCustomer">
+                                        <label class="custom-control-label" for="contractOkCustomer">&nbspConcordo com os dados apresentados no contrato abaixo.</label>
+                                </div>
+                                
                                 <object data="Documents/requisitos.pdf" type="application/pdf" id="pdfObject" height="800px">
                                     <a id="pdfContrato" href="Documents/requisitos.pdf">Download contrato.</a>
                                 </object>
+                                
                             </div>
                             <!-- MANAGEMENT CLASSES -->
                                     <div class="tab-pane fade" id="pills-management" role="tabpanel" aria-labelledby="pills-management-tab">
@@ -261,18 +268,19 @@
                                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                                     <li class="nav-item">
                                                         <a class="nav-link" id="pills-teachingPlaces-tab" data-toggle="pill" href="#pills-teachingPlaces" 
-                                                        role="tab" aria-controls="pills-teachingPlaces" aria-selected="true">Cadastrar espaços</a>
+                                                        role="tab" aria-controls="pills-teachingPlaces" aria-selected="true" onclick="hideLabel('none')">Cadastrar espaços</a>
                                                     </li>
                                                     <li class="nav-item">
                                                         <a class="nav-link" id="pills-registerClass-tab" data-toggle="pill" href="#pills-registerClass" 
-                                                        role="tab" aria-controls="pills-registerClass" aria-selected="true">Cadastrar Aulas</a>
+                                                        role="tab" aria-controls="pills-registerClass" aria-selected="true" onclick="hideLabel('none')">Cadastrar Aulas</a>
                                                     </li>
                                                     <li class="nav-item">
                                                         <a class="nav-link" id="pills-schedule-tab" data-toggle="pill" href="#pills-schedule" 
-                                                        role="tab" aria-controls="pills-schedule" aria-selected="false">Planejar Aulas</a>
+                                                        role="tab" aria-controls="pills-schedule" aria-selected="false" onclick="hideLabel('none')">Planejar Aulas</a>
                                                     </li>
                                                 </ul>
                                                 <div class="tab-content" id="pills-tabContent1">
+                                                   <span id="pickAnOptionLabel">Escolha uma opção</span>
                                                     <div class="tab-pane fade" id="pills-teachingPlaces" role="tabpanel" aria-labelledby="pills-teachingPlaces-tab">
                                                         <form action="">
                                                             <!-- root teaching unit -->
@@ -316,12 +324,12 @@
                                                                             </label>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                    <div class="form-group">
+                                                                    <div class="form-group col-md-8 mx-auto">
                                                                         <!-- <label for="schoolDescription">Descrição do ambiente</label> -->
                                                                         <textarea class="form-control" title="Descrição do ambiente" placeholder="Descrição do ambiente" id="schoolDescription" rows="3"></textarea>
                                                                     </div>
                                                                 </form>  
+                                                            </div>
                                                         <a href="#" class="btn btn-primary">Salvar</a>
                                                     </div>
                                                     <div class="tab-pane fade" id="pills-registerClass" role="tabpanel" aria-labelledby="pills-registerClass-tab">
@@ -343,25 +351,30 @@
                                                                 </div>  
                                                             <!-- conteúdo curso  -->
                                                             <div class="input-group mb-3">
-                                                                <input type="text" class="form-control col-md-12" placeholder="Conteúdo do curso" aria-label="conteúdo curso" aria-describedby="basic-addon1" required>
+                                                                <input type="text" class="form-control col-md-8 mx-auto" placeholder="Conteúdo do curso" aria-label="conteúdo curso" aria-describedby="basic-addon1" required>
                                                             </div>
                                                             <!-- Descrição da proposta da aula.  -->
                                                             <div class="input-group mb-3">
-                                                                <textarea type="text" class="form-control col-md-12" placeholder="Descrição da proposta da aula" aria-label="Descrição da proposta da aula." aria-describedby="basic-addon1" required></textarea>
+                                                                <textarea type="text" class="form-control col-md-8 mx-auto" placeholder="Descrição da proposta da aula" aria-label="Descrição da proposta da aula." aria-describedby="basic-addon1" required></textarea>
                                                             </div>
                                                             <!-- </div> -->
                                                             <!-- quantidade alunos  -->
                                                             <form name="qtdAlunos">
                                                                 <label for="">Quantidade de alunos por turma</label>
                                                                 <output name="outputName" id="outputIdstudents">5</output>
-                                                                <input type="range" name="inputRange"value="5" id="inputRange" class="custom-range" min="1" max="50" step="1" oninput="outputIdstudents.value = inputRange.value">
+                                                                <br>
+                                                                <input type="range" name="inputRange"value="5" id="inputRange" class="custom-range com-md-8 mx-auto" min="1" max="50" step="1" oninput="outputIdstudents.value = inputRange.value">
                                                             </form>
+                                                            <br>
+
                                                             <!-- tipos de aulas  -->
                                                             <form name="valores">
                                                                 <label for="">Custo: </label>
                                                                 <output name="valueName" id="valueIdLessons">100.00</output>
-                                                                <input type="range" name="inputValue" value="100.00" id="inputValue" class="custom-range" min="1.00" max="500.00" step="0.5" oninput="valueIdLessons.value = inputValue.value">
+                                                                <br>
+                                                                <input type="range" name="inputValue" value="100.00" id="inputValue" class="custom-range com-md-8 mx-auto" min="1.00" max="500.00" step="0.5" oninput="valueIdLessons.value = inputValue.value">
                                                             </form>
+                                                            <br>
                                                             <!-- tipo de cobranca  -->
                                                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                                                 <label class="btn btn-outline-primary btnRegister active">
@@ -392,44 +405,157 @@
                                                                 <option data-subtext="14:30">Tambor</option>
                                                             </select>
                                                         </div>
+
+                                                            <label for="registeredSchools">Adicionar alunos a turma selecionada</label>
+                                                                <!-- <div class="card text-center col-md-9 mx-auto">
+                                                                    <div class="card-header"></div> 
+                                                                    <div class="card-body">
+                                                                        <select id="registeredStudents" class="selectpicker col-md-12" data-live-search="true" 
+                                                                        data-size="10" data-style="btn-outline-primary" title="Todos os Alunos" multiple>
+                                                                            <option>Jefferson Mendes</option>
+                                                                            <option>Berenice Foguetinha</option>
+                                                                            <option>Gustavo Palestino</option>
+                                                                            <option>Presto</option>
+                                                                        </select>
+                                                                        <br>
+                                                                        <div class="btn-group-horizontal justify-content-center" role="group" aria-label="Basic example">
+                                                                            <button type="button" id="btnRemove" onclick="removeOption()" class="btn btn-outline-secondary btn-group-sm btnAddRemove"><b>Remover</b></button>
+                                                                            <button type="button" id="btnAdd" onclick="addOption()" class="btn btn-outline-primary btn-group-sm btnAddRemove"><b>Adicionar</b></button>
+                                                                        </div>
+                                                                        <select id="newClass" class="selectpicker col-md-12" data-live-search="true" 
+                                                                        data-size="10" data-style="btn-outline-primary" title="Nova Turma" multiple>
+                                                                            <option>Hank</option>
+                                                                            <option>Presto</option>
+                                                                            <option>Mestre dos Magos</option>
+                                                                            <option>Uni</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div> -->
+
+                                                            <div class="row mx-auto justify-content-center">
+                                                                <div class="col-md-4">
+                                                                    <div class="container-fluid">
+                                                                        <div class="card">
+                                                                            <div class="list-group list-group-flush" id="allStudents">
+                                                                                <a href="#" onclick="moveOnClick(this)" class="list-group-item list-group-item-action">Titus</a>
+                                                                                <a href="#" class="list-group-item list-group-item-action">Titus</a>
+                                                                                <a href="#" class="list-group-item list-group-item-action">Titus</a>
+                                                                                <a href="#" class="list-group-item list-group-item-action">Titus</a>
+                                                                                <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                                                                                <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                                                                                <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                                                                                <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-4">
+                                                                    <div class="container-fluid">
+                                                                        <div class="card">
+                                                                            <div class="list-group list-group-flush">
+                                                                                <a href="#" class="list-group-item list-group-item-action">FIRST LINK</a>
+                                                                                <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+                                                        <!-- <script>
+                                                                    $(function() {
+                                                                        $('.selectpicker').selectpicker();
+                                                                    });
+
+                                                                    var AllStudents = {
+                                                                        0 : 'Jefferson Mendes',
+                                                                        1 : 'Gustavo Palestino',
+                                                                        2 : 'Berenice Foguetinha',
+                                                                        3 : 'Presto'
+                                                                    };
+
+                                                                    var NewClass = {
+                                                                        0 : 'Marcela Juliao',
+                                                                        1 : 'Joice'
+                                                                    };
+
+                                                                    var newClassSelect = document.getElementById("newClass");
+                                                                    var allStudentsSelect = document.getElementById("registeredStudents");
+                                                                    var btnAdd = document.getElementById('btnAdd');
+                                                                    var btnRemove = document.getElementById('btnRemove');
+                                                                    
+                                                                    // function populateSelects(){
+                                                                        //populate Allstudentsselect
+                                                                        for(index in AllStudents) {
+                                                                            allStudentsSelect.options[allStudentsSelect.options.length] = 
+                                                                            new Option(AllStudents[index], index);
+                                                                        }
+                                                                        //populate newclass select
+                                                                        for(index in NewClass) {
+                                                                            newClassSelect.options[newClassSelect.options.length] = 
+                                                                            new Option(NewClass[index], index);
+                                                                        }
+                                                                    // }
+                                                                    
+
+                                                                    function myFunction(value) {
+                                                                        var option = document.createElement("option");
+                                                                        option.appendChild(document.createTextNode(value));
+                                                                        option.value = value;
+                                                                        newClassSelect.appendChild(option);
+                                                                    }
+
+                                                                    function addOption(){
+                                                                        populateSelects()
+                                                                    }
+
+                                                                    function removeOption(){
+                                                                        populateSelects()
+                                                                    }
+
+                                                                    function removeAllOptions(){
+                                                                        var select = document.getElementById("dynamic-select");
+                                                                        select.options.length = 0;
+                                                                    }
+
+                                                                    function addStudents(){
+
+                                                                        //references all students registered select
+                                                                        allStudentsSelect = document.getElementById("registeredStudents");
+                                                                        //gets only selected entries in previous referenced select
+                                                                        allStudentsSelected = allStudentsSelect.selectedOptions;
+
+                                                                        Object.keys(allStudentsSelected).forEach(function(key) {
+                                                                            console.table('Key : ' + key + ', Value : ' + allStudentsSelected[key].innerText);
+                                                                            var opt = document.createElement('option');
+                                                                            opt.value = NewClass.push(allStudentsSelected[key].innerText);
+                                                                            opt.innerHTML = NewClass.push(allStudentsSelected[key].innerText);
+                                                                            newClassSelect.appendChild(opt);
+
+                                                                            console.log(NewClass);
+                                                                        })
+
+                                                                        //populate newclass select
+                                                                        // for(index in NewClass) {
+                                                                        //     newClassSelect.options[newClassSelect.options.length] = 
+                                                                        //     new Option(NewClass[index].innerText, index);
+                                                                        // }
+                                                                    }
+
+                                                                    function removeStudents(){
+                                                                        AllStudents.forEach(element => {
+                                                                            delete AllStudents[element]; 
+                                                                        });
+                                                                    }
+
+
+                                                                </script> -->
                                                         
                                                         <!-- alunos lista  -->
-                                                        RF16:4 <br>
-                                                        <label for="">Adicionar alunos a turma selecionada</label>
-                                        
-                                                        <div class="row col-md-12 justify-content-center align-self-center">
-                                                            <div class="col-5">
-                                                                <div class="list-group" id="list-tab" role="tablist">
-                                                                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Jefferson</a>
-                                                                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Pedro</a>
-                                                                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Gustavo</a>
-                                                                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Berenice</a>
-                                                                </div>
-                                                            </div>
-                                        
-                                                            <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                                                                <button type="button" id="btnAdd" class="btn btn-outline-primary btn-group-sm btnAddRemove"><b>+</b></button>
-                                                                <button type="button" id="btnRemove" class="btn btn-outline-primary btn-group-sm btnAddRemove"><b>-</b></button>
-                                                            </div>
-                                        
-                                                            <div class="col-5">
-                                                                <div class="list-group" id="list-tab" role="tablist">
-                                                                    <a class="list-group-item list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Jefferson</a>
-                                                                    <a class="list-group-item list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Jefferson</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <!-- RF16:4 <br> -->
 
-                                                        <script>
-
-                                                        
-                                                        $("#ViewRows").on("click", "a#btnRemove", function () {
-                                                            $(this).parent().remove();
-                                                        });
-                                                        </script>
-                                                        <a href="#" class="btn btn-primary">Salvar</a>
+                                                        <a href="#" class="btn btn-primary col-md-8">Salvar</a>
                                                     </div>                                             
-Escolha uma opção
                                                 </div>
                                             </div>
                                         </div>
@@ -555,42 +681,81 @@ Escolha uma opção
                                             </div>
                                             <div id="collapse1" class="panel-collapse collapse">
                                                 <div class="panel-body">
-                                                    <table class="table table-hover table-sm">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">Presença</th>
-                                                                <th scope="col">Aluno</th>
-                                                                <th scope="col">Aula</th>
-                                                                <th scope="col">Local</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <input type="radio" aria-label="Checkbox for following text input">
-                                                                </td>
-                                                                <th scope="row">Jefferson</th>
-                                                                <td>Guitarra</td>
-                                                                <td>Escola UNIMOS</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <input type="radio" aria-label="Checkbox for following text input">
-                                                                </td>
-                                                                <th scope="row">Gustavo</th>
-                                                                <td>Guitarra</td>
-                                                                <td>Escola UNIMOS</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <input type="radio" aria-label="Checkbox for following text input">
-                                                                </td>
-                                                                <th scope="row">Berenice</th>
-                                                                <td>Guitarra</td>
-                                                                <td>Escola UNIMOS</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-hover table-sm">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Presença</th>
+                                                                    <th scope="col">Aluno</th>
+                                                                    <th scope="col">Aula</th>
+                                                                    <th scope="col">Local</th>
+                                                                    <th scope="col">Tipo de aula</th>
+                                                                    <th scope="col">Frequência</th>
+                                                                    <th scope="col">Limite da turma</th>
+                                                                    <th>Revisao</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                            <label class="btn btn-outline-danger">
+                                                                                <input type="radio" name="options" id="radioFaltou" autocomplete="off" checked> Faltou
+                                                                            </label>
+                                                                            <label class="btn btn-outline-success">
+                                                                                <input type="radio" name="options" id="radioPresente" autocomplete="off"> Presente
+                                                                            </label>
+                                                                        </div>  
+                                                                    </td>
+                                                                    <th scope="row">Jefferson</th>
+                                                                    <td>Guitarra</td>
+                                                                    <td>Escola UNIMOS</td>
+                                                                    <td>Pontual</td>
+                                                                    <td>Diaria</td>
+                                                                    <td>15</td>
+                                                                    <td><a href="">Desconto</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                            <label class="btn btn-outline-danger">
+                                                                                <input type="radio" name="options" id="radioFaltou" autocomplete="off" checked> Faltou
+                                                                            </label>
+                                                                            <label class="btn btn-outline-success">
+                                                                                <input type="radio" name="options" id="radioPresente" autocomplete="off"> Presente
+                                                                            </label>
+                                                                        </div>  
+                                                                    </td>
+                                                                    <th scope="row">Gustavo</th>
+                                                                    <td>Guitarra</td>
+                                                                    <td>Escola UNIMOS</td>
+                                                                    <td>Regular</td>
+                                                                    <td>Mensal</td>
+                                                                    <td>15</td>
+                                                                    <td><a href="">Desconto</a></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                            <label class="btn btn-outline-danger">
+                                                                                <input type="radio" name="options" id="radioFaltou" autocomplete="off" checked> Faltou
+                                                                            </label>
+                                                                            <label class="btn btn-outline-success">
+                                                                                <input type="radio" name="options" id="radioPresente" autocomplete="off"> Presente
+                                                                            </label>
+                                                                        </div>  
+                                                                    </td>
+                                                                    <th scope="row">Berenice</th>
+                                                                    <td>Guitarra</td>
+                                                                    <td>Escola UNIMOS</td>
+                                                                    <td>Regular</td>
+                                                                    <td>Anual</td>
+                                                                    <td>15</td>
+                                                                    <td><a href="">Desconto</a></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
                                                 <div class="panel-footer">
                                                     <a href="#" class="btn btn-primary">Salvar</a>
@@ -613,34 +778,72 @@ Escolha uma opção
                                             </div>
                                             <div id="collapse2" class="panel-collapse collapse">
                                                 <div class="panel-body">
-                                                    <table class="table table-hover table-sm">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">Presença</th>
-                                                                <th scope="col">Aluno</th>
-                                                                <th scope="col">Aula</th>
-                                                                <th scope="col">Local</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <input type="radio" aria-label="Checkbox for following text input">
-                                                                </td>
-                                                                <th scope="row">Berenice</th>
-                                                                <td>Guitarra</td>
-                                                                <td>Escola UNIMOS</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <input type="radio" aria-label="Checkbox for following text input">
-                                                                </td>
-                                                                <th scope="row">Bianca</th>
-                                                                <td>Guitarra</td>
-                                                                <td>Escola UNIMOS</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-hover table-sm">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Presença</th>
+                                                                    <th scope="col">Aluno</th>
+                                                                    <th scope="col">Aula</th>
+                                                                    <th scope="col">Local</th>
+                                                                    <th scope="col">Tipo de aula</th>
+                                                                    <th scope="col">Frequência</th>
+                                                                    <th scope="col">Limite da turma</th>
+                                                                    <th scope="col">Revisao</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                            <label class="btn btn-outline-danger">
+                                                                                <input type="radio" name="options" id="radioFaltou" autocomplete="off" checked> Faltou
+                                                                            </label>
+                                                                            <label class="btn btn-outline-success">
+                                                                                <input type="radio" name="options" id="radioPresente" autocomplete="off"> Presente
+                                                                            </label>
+                                                                        </div>  
+                                                                    </td>
+                                                                    <th scope="row">Berenice</th>
+                                                                    <td>Guitarra</td>
+                                                                    <td>Escola UNIMOS</td>
+                                                                    <td>Regular</td>
+                                                                    <td >Quinzenal
+                                                                        <!-- <pre></pre>
+                                                                        <span 
+                                                                            class="content show-tooltip" 
+                                                                            data-placement="top"
+                                                                            title="&#010;12/06/1989&#010;
+                                                                                22/06/1989">Quinzenal</span> -->
+                                                                    </td>
+                                                                    <td>15</td>
+                                                                    <td><a href="">Desconto</a></td>
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                            <label class="btn btn-outline-danger">
+                                                                                <input type="radio" name="options" id="radioFaltou" autocomplete="off" checked> Faltou
+                                                                            </label>
+                                                                            <label class="btn btn-outline-success">
+                                                                                <input type="radio" name="options" id="radioPresente" autocomplete="off"> Presente
+                                                                            </label>
+                                                                        </div>  
+                                                                    </td>
+                                                                    <th scope="row">Bianca</th>
+                                                                    <td>Guitarra</td>
+                                                                    <td>Escola UNIMOS</td>
+                                                                    <td>Regular</td>
+                                                                    <td>Semanal</td>
+                                                                    <td>5</td>
+                                                                    <td>
+                                                                        <a href="">Desconto</a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
                                                 <div class="panel-footer">
                                                     <a href="#" class="btn btn-primary">Salvar</a>
@@ -658,24 +861,31 @@ Escolha uma opção
                                     <div class="col-md-12 blog-holder">
                                         <div class="row justify-content-center">
                                             <!-- Profile PIC -->
-                                            <div class="col-md-2 blog-item-wrapper" id="profilePicture">
-                                                <img src="img/Img/profile.png" class="img-responsive img-rounded" alt="profile">
-                                                <div id="divUploadPic" class="file btn-warning col-md-12">
-                                                    <span>Trocar</span>
-                                                    <input type="file" name="uploadPic" id="uploadPic">
-                                                </div>
-                                                <!-- <a href="#" class="btn btn-warning col-md-12 btn-sm">
-                                                    <input type="file" name="changePic" class="custom-file-input" id="uploadPic">
-                                                </a> -->
+                                            <div class="col-md-2 blog-item-wrapper" id="divProfilePicture">
+
+                                                <input type="file" id="pic" style="display: none" />
+                                                    <!-- <button class="btn-primary-outline"> -->
+                                                        <figure class="figure">
+                                                            <img src="img/Img/profile.png" alt="" class="profilePicture">
+                                                            <figcaption class="figure-caption text-center">Clique na imagem para atualizar</figcaption>
+
+                                                        </figure>
+                                                    <!-- </button> -->
+                                                    <script>
+                                                        $(".profilePicture").on("click", function() {
+                                                            $("#pic").trigger("click");
+                                                        });
+                                                    </script>
+
                                             </div>
                                             <!-- End Profile PIC -->
                                             <!-- Item -->
                                             <div class="col-md-10 blog-item-wrapper">
-                                                <div class="blog-item">
+                                                <!-- <div class="blog-item">
                                                     <div class="blog-text">
                                                         <div class="blog-tag">
                                                             <a href="#"><h6><small></small></h6></a>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="blog-title">
                                                         </div>
             
@@ -807,8 +1017,8 @@ Escolha uma opção
                                                         <div class="blog-share-wrapper">
                                         
                                                         </div> -->
-                                                    </div>
-                                                </div>
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
                                             </div>
                                             <!-- End Cards -->
                                         </div>
@@ -851,7 +1061,7 @@ Escolha uma opção
     <!-- Box End -->
 
 	<!-- External JS -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> -->
 	<script src="vendor/bootstrap/popper.min.js"></script>
     <script src="vendor/bootstrap/bootstrap.min.js"></script>
     <script src="vendor/bootstrap/bootstrap-select.min.js"></script>

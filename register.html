@@ -328,7 +328,7 @@
                                         <!-- user registration end -->
                                         <!-- teacher registration start -->
                                         <div class="tab-pane fade" id="pills-teacher" role="tabpanel" aria-labelledby="pills-teacher-tab">
-                                            <form action="" id="teacherForm" class="mb-3">
+                                            <form method="post" action="inserirProfessor.php" id="professor" name="professor"  class="mb-3">
                                                 <!-- start common inputs -->
                                                 <div class="blog-tag align-items-center mx-auto">
                                                     <h5><small>Dados para Acesso</small></h5>
@@ -338,7 +338,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="strEmail"></span>
                                                         </div>
-                                                        <input type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" required>
+                                                        <input type="email" id="emailp" name="emailp" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" required>
                                                     </div>
                                                     <!-- confirmar email -->
                                                     <div class="input-group mb-3">
@@ -353,7 +353,7 @@
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text inr-users" id="strPassword"></span>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1" required>
+                                                            <input type="text" id="senhap" name="senhap" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1" required>
                                                         </div>
                                                         <!-- Confirmar Senha -->
                                                         <div class="input-group col-md-6 mb-3">
@@ -373,14 +373,14 @@
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text inr-users" id="strName"></span>
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Nome completo" aria-label="Username" aria-describedby="basic-addon1" required>
+                                                    <input type="text" id="nomep" name="nomep" class="form-control" placeholder="Nome completo" aria-label="Username" aria-describedby="basic-addon1" required>
                                                 </div>
                                                     <!-- nome fantasia -->
                                                     <div class="input-group mb-3">
                                                         <div class="input-group-prepend">
                                                         <span class="input-group-text inr-users" id="strName"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" id="nomeFantasia" placeholder="Nome fantasia" aria-label="" aria-describedby="basic-addon1" required>
+                                                        <input type="text" id="nomepf" name="nomepf" class="form-control" placeholder="Nome fantasia" aria-label="" aria-describedby="basic-addon1" required>
                                                     </div>
                                                 <div class="form-row">
                                                     <!-- cpf -->
@@ -388,14 +388,14 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="numCPF"></span>
                                                         </div>
-                                                        <input type="text" title="CPF deve conter 11 dígitos" class="form-control" placeholder="CPF" aria-label="cpf" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                        <input type="text" id="cpfp" name="cpfp" title="CPF deve conter 11 dígitos" class="form-control" placeholder="CPF" aria-label="cpf" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
                                                     </div>
                                                     <!-- rg -->
                                                     <div class="input-group col-md-6 mb-3">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="numRg"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="RG" aria-label="RG" aria-describedby="basic-addon1" required>
+                                                        <input type="text" id="rgp" name="rgp" class="form-control" placeholder="RG" aria-label="RG" aria-describedby="basic-addon1" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
@@ -404,14 +404,14 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="birhDate"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Data de nascimento" aria-label="Data de Nascimento" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                        <input type="text" id="datap" name="datap" class="form-control" placeholder="Data de nascimento" aria-label="Data de Nascimento" aria-describedby="basic-addon1" >
                                                     </div>
                                                     <!-- genero -->
                                                     <div class="input-group col-md-6 mb-3">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="chGender"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" required>
+                                                        <input type="text" id="generop" name="generop" class="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
@@ -420,14 +420,14 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="numTelephone"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                        <input type="text" id="telefonep" name="telefonep" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1">
                                                     </div>
                                                     <!-- CNPJ -->
                                                     <div class="input-group col-md-6 mb-3">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="cnpj"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="CNPJ" aria-label="CNPJ" aria-describedby="basic-addon1">
+                                                        <input type="text" id="cnpjp" name="cnpjp" class="form-control" placeholder="CNPJ" aria-label="CNPJ" aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>
 
@@ -436,7 +436,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text inr-users" id="strName"></span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="instrumentos" placeholder="Instrumentos que leciona" aria-label="" aria-describedby="basic-addon1" required>
+                                                    <input type="text" class="form-control" id="instrumentosp" name="instrumentosp" placeholder="Instrumentos que leciona" aria-label="" aria-describedby="basic-addon1" required>
                                                 </div>
 
                                                 <!-- descricao -->
@@ -444,15 +444,18 @@
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text inr-users" id="strDescription"></span>
                                                     </div>
-                                                    <textarea class="form-control" id="description" placeholder="Descrição da experiência e formação" rows="5" required></textarea>
+                                                    <textarea class="form-control" id="descriptionp" name="descriptionp" placeholder="Descrição da experiência e formação" rows="5" required></textarea>
                                                 </div>
+                  										                              
+						                                <button class="btn btn-block btn-outline-primary" type="submit" name="submit">Enviar</button>                  
+                                                
                                             </form>
                                         </div>
                                         <!-- teacher registration end -->
                                         <!-- articulator registration start -->
                                         <div class="tab-pane fade" id="pills-articulator" role="tabpanel" aria-labelledby="pills-articulator-tab">
                                             
-                                            <form action="" id="articulatorForm" class="mb-3">
+                                            <form method="post" action="inserirArticulador.php" id="inserirArticulador" class="mb-3">
                                                 <!-- start common inputs -->
                                                 <div class="blog-tag align-items-center mx-auto">
                                                     <h5><small>Dados para Acesso</small></h5>
@@ -462,7 +465,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="strEmail"></span>
                                                         </div>
-                                                        <input type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" required>
+                                                        <input type="email" id="emailar" name="emailar" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" required>
                                                     </div>
                                                     <!-- confirmar email -->
                                                     <div class="input-group mb-3">
@@ -477,7 +480,7 @@
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text inr-users" id="strPassword"></span>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1" required>
+                                                            <input type="text" id="senhaar" name="senhaar" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1" required>
                                                         </div>
                                                         <!-- Confirmar Senha -->
                                                         <div class="input-group col-md-6 mb-3">
@@ -497,28 +500,28 @@
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text inr-users" id="strName"></span>
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Nome completo" aria-label="Username" aria-describedby="basic-addon1" required>
+                                                    <input type="text" id="nomear" name="nomear" class="form-control" placeholder="Nome completo" aria-label="Username" aria-describedby="basic-addon1" required>
                                                 </div>
                                                 <!-- nome fantasia -->
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text inr-users" id="strName"></span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="nomeFantasia" placeholder="Nome fantasia" aria-label="" aria-describedby="basic-addon1" required>
+                                                    <input type="text" id="nomefar" name="nomefar" class="form-control" placeholder="Nome fantasia" aria-label="" aria-describedby="basic-addon1" required>
                                                 </div>
                                                 <!-- razao social -->
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text inr-users" id="strRazaoSocial"></span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="razaoSocial" placeholder="Razão Social" aria-label="" aria-describedby="basic-addon1" required>
+                                                    <input type="text" name="razaoar" id="" class="form-control" placeholder="Razão Social" aria-label="" aria-describedby="basic-addon1" required>
                                                 </div>
                                                 <!-- endereço -->
                                                 <div class="input-group mb-3">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="strEndereco"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Endereço da escola" aria-label="Endereco da escola" aria-describedby="basic-addon1" required>
+                                                        <input type="text" id="enderecoar" name="enderecoar" class="form-control" placeholder="Endereço da escola" aria-label="Endereco da escola" aria-describedby="basic-addon1" required>
                                                     </div>
                                                     <div class="form-row">
                                                         <!-- num -->
@@ -526,7 +529,7 @@
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text inr-users" id="intNumSchool"></span>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="Número" aria-label="Número" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                            <input type="text" id="numeroar" name="numeroar" class="form-control" placeholder="Número" aria-label="Número" aria-describedby="basic-addon1">
                                                         </div>
                                                         <!-- Bairro / Cidade -->
                                                         <div class="input-group col-md-5 mb-3">
@@ -536,7 +539,7 @@
                                                             <input type="text" class="form-control" placeholder="Bairro / Cidade" aria-label="cidade" aria-describedby="basic-addon1" required>
                                                         </div>
                                                         <div class="form-group col-md-2">
-                                                            <select id="inputState" class="form-control align-items-center uf">
+                                                            <select id="estadoar" name="estadoar" class="form-control align-items-center uf">
                                                                 <option value="SP">SP</option>
                                                                 <option value="AC">AC</option>
                                                                 <option value="AL">AL</option>
@@ -571,7 +574,7 @@
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text inr-users" id="strType"></span>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="CEP" aria-label="tipo" aria-describedby="basic-addon1" required>
+                                                            <input type="text" id="cepar" name="cepar" class="form-control" placeholder="CEP" aria-label="tipo" aria-describedby="basic-addon1" required>
                                                         </div>
                                                     </div>
                                                     <div class="form-row">
@@ -580,14 +583,14 @@
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text inr-users" id="intNumSchool"></span>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="Complemento" aria-label="Complemento" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                            <input type="text" id="complementoar" name="complementoar" class="form-control" placeholder="Complemento" aria-label="Complemento" aria-describedby="basic-addon1">
                                                         </div>
                                                         <!-- Tipo-->
                                                         <div class="input-group col-md-4 mb-3">
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text inr-users" id="strType"></span>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="Tipo" aria-label="tipo" aria-describedby="basic-addon1" required>
+                                                            <input type="text" id="tipoar" name="tipoar" class="form-control" placeholder="Tipo" aria-label="tipo" aria-describedby="basic-addon1" required>
                                                         </div>
                                                     </div>
                                                     <!-- endereco end -->
@@ -597,14 +600,14 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="numCPF"></span>
                                                         </div>
-                                                        <input type="text" title="CPF deve conter 11 dígitos" class="form-control" placeholder="CPF" aria-label="cpf" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                        <input type="text" id="cpfar" name="cpfar" title="CPF deve conter 11 dígitos" class="form-control" placeholder="CPF" aria-label="cpf" aria-describedby="basic-addon1">
                                                     </div>
                                                     <!-- rg -->
                                                     <div class="input-group col-md-6 mb-3">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="numRg"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="RG" aria-label="RG" aria-describedby="basic-addon1" required>
+                                                        <input type="text" id="rgar" name="rgar" class="form-control" placeholder="RG" aria-label="RG" aria-describedby="basic-addon1" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
@@ -613,14 +616,14 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="birhDate"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Data de nascimento" aria-label="Data de Nascimento" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                        <input type="text" id="datanaar" name="datanaar" class="form-control" placeholder="Data de nascimento" aria-label="Data de Nascimento" aria-describedby="basic-addon1">
                                                     </div>
                                                     <!-- genero -->
                                                     <div class="input-group col-md-6 mb-3">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="chGender"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" required>
+                                                        <input type="text" id="generoar" name="generoar" class="form-control" placeholder="Gênero" aria-label="Gênero" aria-describedby="basic-addon1" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
@@ -629,14 +632,14 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="numTelephone"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                        <input type="text" id="telefonear" name="telefonear" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1">
                                                     </div>
                                                     <!-- CNPJ -->
                                                     <div class="input-group col-md-6 mb-3">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="cnpj"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="CNPJ" aria-label="CNPJ" aria-describedby="basic-addon1">
+                                                        <input type="text" id="cnpjar" name="cnpjar" class="form-control" placeholder="CNPJ" aria-label="CNPJ" aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>
                                                 <!-- descricao -->
@@ -644,14 +647,15 @@
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text inr-users" id="strPJAddress"></span>
                                                     </div>
-                                                    <textarea class="form-control" id="description" placeholder="Descrição da experiência e formação" rows="5" required></textarea>
+                                                    <textarea class="form-control"  id="textoar" name="textoar" placeholder="Descrição da experiência e formação" rows="5" required></textarea>
                                                 </div>
+                                               <button class="btn btn-block btn-outline-primary" type="submit" name="submit">Enviar</button>                  
                                             </form>
                                         </div>
                                         <!-- articulator registration end -->
                                         <!-- school registration start -->
                                         <div class="tab-pane fade" id="pills-school" role="tabpanel" aria-labelledby="pills-school-tab">
-                                            <form action="" id="schoolForm" class="mb-3">
+                                            <form method="post" action="inserirEscola.php" id="inserirEscola" name="inserirEscola" class="mb-3">
                                                 <!-- start common inputs -->
                                                 <div class="blog-tag align-items-center mx-auto">
                                                     <h5><small>Dados para Acesso</small></h5>
@@ -660,7 +664,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="strEmail"></span>
                                                         </div>
-                                                        <input type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" required>
+                                                        <input type="email" id="emailus" name="emailus" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1" required>
                                                     </div>
                                                     <!-- confirmar email -->
                                                     <div class="input-group mb-3">
@@ -675,7 +679,7 @@
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text inr-users" id="strPassword"></span>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1" required>
+                                                            <input type="text" id="senhaus" name="senhaus" class="form-control" placeholder="Senha" aria-label="senha" aria-describedby="basic-addon1" required>
                                                         </div>
                                                         <!-- Confirmar Senha -->
                                                         <div class="input-group col-md-6 mb-3">
@@ -695,21 +699,21 @@
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text inr-users" id="strName"></span>
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Nome fantasia" aria-label="nomefantasia" aria-describedby="basic-addon1" required>
+                                                    <input type="text" name="nomefus" id="nomefus" class="form-control" placeholder="Nome fantasia" aria-label="nomefantasia" aria-describedby="basic-addon1" required>
                                                 </div>
                                                 <!-- nome PJ -->
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                     <span class="input-group-text inr-users" id="strNamePj"></span>
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Nome pessoa júridica" aria-label="nomepj" aria-describedby="basic-addon1" required>
+                                                    <input type="text" name="nomejus" id="nomejus" class="form-control" placeholder="Nome pessoa júridica" aria-label="nomepj" aria-describedby="basic-addon1" required>
                                                 </div>
                                                     <!-- nome adm -->
                                                     <div class="input-group mb-3">
                                                         <div class="input-group-prepend">
                                                         <span class="input-group-text inr-users" id="strNameSchoolAdm"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Nome completo do responsável pela instituição" aria-label="nomepj" aria-describedby="basic-addon1" required>
+                                                        <input type="text" id="nomecus" name="nomecus" class="form-control" placeholder="Nome completo do responsável pela instituição" aria-label="nomepj" aria-describedby="basic-addon1" required>
                                                     </div>
                                                     <div class="form-row">
                                                     <!-- Telefone -->
@@ -717,14 +721,14 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="numTelephone"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                        <input type="text" id="telefoneus" name="telefoneus" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1">
                                                     </div>
                                                     <!-- CNPJ -->
                                                     <div class="input-group col-md-6 mb-3">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="schoolCNPJ"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="CNPJ" aria-label="CNPJ" aria-describedby="basic-addon1">
+                                                        <input type="text" id="cnpjus" name="cnpjus" class="form-control" placeholder="CNPJ" aria-label="CNPJ" aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>
                                                 <!-- endereço -->
@@ -732,7 +736,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text inr-users" id="strEndereco"></span>
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Endereço da escola" aria-label="Endereco da escola" aria-describedby="basic-addon1" required>
+                                                    <input type="text" id="enderecoEscola" name="enderecoEscola" class="form-control" placeholder="Endereço da escola" aria-label="Endereco da escola" aria-describedby="basic-addon1" required>
                                                 </div>
                                                 <div class="form-row">
                                                     <!-- num -->
@@ -740,17 +744,17 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="intNumSchool"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Número" aria-label="Número" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                        <input type="text" id="numerous" name="numerous" class="form-control" placeholder="Número" aria-label="Número" aria-describedby="basic-addon1">
                                                     </div>
                                                     <!-- Bairro / Cidade -->
                                                     <div class="input-group col-md-5 mb-3">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="strBairro"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Bairro / Cidade" aria-label="cidade" aria-describedby="basic-addon1" required>
+                                                        <input type="text" id="bairrous" name="bairrous" class="form-control" placeholder="Bairro / Cidade" aria-label="cidade" aria-describedby="basic-addon1" required>
                                                     </div>
                                                     <div class="form-group col-md-2">
-                                                        <select id="inputState" class="form-control align-items-center uf">
+                                                        <select id="estadous" name="estadous" class="form-control align-items-center uf">
                                                             <option value="SP">SP</option>
                                                             <option value="AC">AC</option>
                                                             <option value="AL">AL</option>
@@ -785,7 +789,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="strType"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="CEP" aria-label="tipo" aria-describedby="basic-addon1" required>
+                                                        <input type="text" class="form-control" id="cepus" name="cepus" placeholder="CEP" aria-label="tipo" aria-describedby="basic-addon1" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
@@ -794,23 +798,24 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="intNumSchool"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Complemento" aria-label="Complemento" aria-describedby="basic-addon1" pattern="[0-9]{11}" required>
+                                                        <input type="text" id="complementous" name="complementous" class="form-control" placeholder="Complemento" aria-label="Complemento" aria-describedby="basic-addon1">
                                                     </div>
                                                     <!-- Tipo-->
                                                     <div class="input-group col-md-4 mb-3">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text inr-users" id="strType"></span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="Tipo" aria-label="tipo" aria-describedby="basic-addon1" required>
+                                                        <input type="text" id="tipous" name="tipous" class="form-control" placeholder="Tipo" aria-label="tipo" aria-describedby="basic-addon1" required>
                                                     </div>
                                                 </div>
+                                                <button class="btn btn-block btn-outline-primary" type="submit" name="submit">Enviar</button>                  
                                                 <!-- endereco end -->
                                             </form>
                                         </div>
                                         <!-- school registration end -->
                                     </div>
 
-                                    <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#registerModal">Registrar</button>
+
                                     </form>
                                 </div>
                             </div>

@@ -4,7 +4,7 @@
      $nomep         = $_POST['nomep'];
      $nomepf        = $_POST['nomepf'];
      $cpfp          = $_POST['cpfp'];
-	  $rgp           = $_POST['rgp']; 
+        $rgp           = $_POST['rgp']; 
 	  $datap         = $_POST['datap'];
 	  $generop       = $_POST['generop'];
 	  $telefonep     = $_POST['telefonep'];
